@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="id-ID">
+<head>
+    <meta name="google-site-verification" content="oCeQOjS1_apG4FZCuPRbqhBWABqO1mXMQhFM7L9azNM" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4MAN Digital Produk for Engineering | MEP CIVIL & HVAC</title>
+    <meta name="description" content="Toko produk digital engineering untuk MEP, Civil, dan HVAC. Mulai Rp 10.000. Pembayaran via Link.ID.">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #3b82f6;
+            --accent-color: #25d366;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f3f4f6;
+            --white: #ffffff;
+            --linkid-color: #6366f1;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        nav {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .logo-circle {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border: 2px solid white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .logo-text {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--secondary-color); }
+        .mobile-menu { display: none; font-size: 1.5rem; cursor: pointer; }
+        
+        /* Hero Section */
+        .hero {
+            margin-top: 70px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 5rem 2rem;
+            text-align: center;            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"/></svg>');
+            opacity: 0.3;
+        }
+        .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+        
+        /* ✅ LOGO BESAR DI HERO - PAKAI LINK ONLINE */
+        .hero-logo {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 2rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            background: white;
+        }
+        .hero-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero h2 { font-size: 2.5rem; margin-bottom: 1rem; animation: fadeInUp 1s ease; }
+        .hero p { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.95; animation: fadeInUp 1s ease 0.2s backwards; }
+        .cta-buttons {
+            display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.4s backwards;
+        }
+        .btn {
+            padding: 1rem 2rem; border: none; border-radius: 50px;
+            font-size: 1rem; font-weight: 600; cursor: pointer;
+            text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;
+            transition: all 0.3s;
+        }
+        .btn-linkid { background: var(--linkid-color); color: white; }
+        .btn-linkid:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3); }
+        .btn-wa { background: var(--accent-color); color: white; }
+        .btn-wa:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3); }
+        .btn-secondary { background: var(--white); color: var(--primary-color); }
+        .btn-secondary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3); }
+        
+        /* Trust Badges */
+        .trust-badges {            display: flex; justify-content: center; gap: 2rem; padding: 2rem;
+            background: var(--white); flex-wrap: wrap;
+        }
+        .badge { display: flex; align-items: center; gap: 0.5rem; color: var(--text-dark); font-size: 0.9rem; }
+        .badge i { color: var(--accent-color); font-size: 1.2rem; }
+        
+        /* Products Section */
+        .products { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; background: var(--bg-light); }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .product-card {
+            background: var(--white); border-radius: 15px; overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: transform 0.3s;
+            display: flex; flex-direction: column;
+        }
+        .product-card:hover { transform: translateY(-5px); }
+        .product-img {
+            width: 100%; height: 180px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex; align-items: center; justify-content: center;
+            color: white; font-size: 3rem;
+        }
+        .product-info { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
+        .product-info h4 { font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--primary-color); }
+        .product-info p { font-size: 0.95rem; color: var(--text-light); margin-bottom: 1rem; flex-grow: 1; }
+        .price-tag {
+            font-size: 1.1rem; font-weight: bold; color: var(--primary-color);
+            margin-bottom: 1rem; display: block;
+        }
+        .btn-buy {
+            width: 100%; padding: 0.8rem; background: var(--linkid-color); color: white;
+            border: none; border-radius: 8px; font-weight: 600; cursor: pointer;
+            text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+            transition: background 0.3s;
+        }
+        .btn-buy:hover { background: #4f46e5; }
+        
+        /* Social Links */
+        .social-links { background: var(--bg-light); padding: 3rem 2rem; text-align: center; }
+        .social-links h3 { font-size: 2rem; margin-bottom: 2rem; color: var(--primary-color); }
+        .social-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem; max-width: 1000px; margin: 0 auto;
+        }
+        .social-card {
+            background: var(--white); padding: 2rem; border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: all 0.3s;
+            text-decoration: none; color: var(--text-dark);
+        }
+        .social-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+        .social-card i { font-size: 3rem; margin-bottom: 1rem; }
+        .social-card.youtube i { color: #FF0000; }        .social-card.instagram i { color: #E4405F; }
+        .social-card.linkid i { color: var(--linkid-color); }
+        .social-card h4 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+        
+        /* Gallery */
+        .gallery { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary-color); }
+        .section-subtitle { text-align: center; color: var(--text-light); margin-bottom: 3rem; font-size: 1.1rem; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .gallery-item {
+            position: relative; overflow: hidden; border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); aspect-ratio: 16/9;
+            background: var(--bg-light);
+        }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+        .gallery-item:hover img { transform: scale(1.1); }
+        
+        /* Contact */
+        .contact { background: var(--white); padding: 5rem 2rem; }
+        .contact-container { max-width: 800px; margin: 0 auto; }
+        .contact-box {
+            background: var(--bg-light); padding: 3rem; border-radius: 15px;
+            text-align: center;
+        }
+        .contact-box p { margin-bottom: 2rem; color: var(--text-light); }
+        .contact-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed; bottom: 30px; right: 30px;
+            width: 60px; height: 60px; background: var(--accent-color); color: white;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999; transition: all 0.3s; text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); }
+        
+        footer { background: var(--primary-color); color: white; text-align: center; padding: 2rem; }
+        footer p { opacity: 0.9; }
+        
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu { display: block; }
+            .hero h2 { font-size: 1.8rem; }
+            .hero p { font-size: 1rem; }
+            .hero-logo { width: 150px; height: 150px; }            .section-title { font-size: 2rem; }
+            .contact-box { padding: 2rem 1.5rem; }
+            .whatsapp-float { width: 50px; height: 50px; font-size: 1.5rem; bottom: 20px; right: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-circle">4M</div>
+                <div class="logo-text">4MAN DIGITAL</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#produk">Produk</a></li>
+                <li><a href="#gallery">Galeri</a></li>
+                <li><a href="#contact">Bantuan</a></li>
+            </ul>
+            <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <!-- ✅ LOGO ONLINE - GARANSI MUNCUL -->
+            <div class="hero-logo">
+                <img src="https://i.ibb.co/jvfF9n4B/4man-logo.png" alt="4MAN Engineering Logo" onerror="this.src='https://via.placeholder.com/180x180/1e3a8a/ffffff?text=4MAN'">
+            </div>
+            
+            <h2>4MAN DIGITAL PRODUK FOR ENGINEERING</h2>
+            <p>Solusi lengkap untuk kebutuhan digital engineering Anda. Spesialis MEP, Civil, dan HVAC dengan kualitas terbaik.</p>
+            <div class="cta-buttons">
+                <a href="https://lynk.id/amanar" class="btn btn-linkid" target="_blank">
+                    <i class="fas fa-shopping-cart"></i> Lihat Produk & Harga
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <i class="fas fa-question-circle"></i> Butuh Bantuan?
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <div class="trust-badges">
+        <div class="badge"><i class="fas fa-check-circle"></i> Pembayaran Otomatis</div>
+        <div class="badge"><i class="fas fa-bolt"></i> File Dikirim Instan</div>        <div class="badge"><i class="fas fa-shield-alt"></i> Transaksi Aman</div>
+        <div class="badge"><i class="fas fa-headset"></i> Support via WhatsApp</div>
+    </div>
+
+    <!-- Products Section -->
+    <section class="products" id="produk">
+        <h2 class="section-title">Kategori Produk</h2>
+        <p class="section-subtitle">Klik kategori untuk lihat detail produk & harga di Link.ID</p>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-img"><i class="fas fa-cogs"></i></div>
+                <div class="product-info">
+                    <h4>Paket MEP Engineering</h4>
+                    <p>File AutoCAD, standar gambar, & template perhitungan instalasi listrik & pipa.</p>
+                    <span class="price-tag">Mulai Rp 10.000</span>
+                    <a href="https://lynk.id/amanar" class="btn-buy" target="_blank">
+                        <i class="fas fa-arrow-right"></i> Lihat Produk
+                    </a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><i class="fas fa-building"></i></div>
+                <div class="product-info">
+                    <h4>Paket Civil & Struktur</h4>
+                    <p>Detail konstruksi, shop drawing, & kalkulasi beban struktur bangunan.</p>
+                    <span class="price-tag">Mulai Rp 10.000</span>
+                    <a href="https://lynk.id/amanar" class="btn-buy" target="_blank">
+                        <i class="fas fa-arrow-right"></i> Lihat Produk
+                    </a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><i class="fas fa-wind"></i></div>
+                <div class="product-info">
+                    <h4>Paket HVAC System</h4>
+                    <p>Desain ducting, perhitungan cooling load, & spesifikasi equipment AC industri.</p>
+                    <span class="price-tag">Mulai Rp 10.000</span>
+                    <a href="https://lynk.id/amanar" class="btn-buy" target="_blank">
+                        <i class="fas fa-arrow-right"></i> Lihat Produk
+                    </a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img"><i class="fas fa-cube"></i></div>
+                <div class="product-info">
+                    <h4>3D Modeling & BIM</h4>
+                    <p>File Revit/SketchUp siap edit, clash detection report, & visualisasi proyek.</p>
+                    <span class="price-tag">Mulai Rp 10.000</span>
+                    <a href="https://lynk.id/amanar" class="btn-buy" target="_blank">
+                        <i class="fas fa-arrow-right"></i> Lihat Produk                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Links -->
+    <section class="social-links" id="social">
+        <h3>Follow Kami untuk Update Terbaru</h3>
+        <div class="social-grid">
+            <a href="https://youtube.com/@tokoprodakengineering4man?si=FuzBuyZ79IHucN2m" class="social-card youtube" target="_blank">
+                <i class="fab fa-youtube"></i><h4>YouTube</h4><p>Tutorial & Review Produk</p>
+            </a>
+            <a href="https://www.instagram.com/4man_engineering_digitalproduk?igsh=MTBia3hzMnI0a20xMg==" class="social-card instagram" target="_blank">
+                <i class="fab fa-instagram"></i><h4>Instagram</h4><p>Update Produk Terbaru</p>
+            </a>
+            <a href="https://lynk.id/amanar" class="social-card linkid" target="_blank">
+                <i class="fas fa-link"></i><h4>Link.ID</h4><p>🛒 Toko Online - Beli Produk</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery" id="gallery">
+        <h2 class="section-title">Galeri Produk</h2>
+        <p class="section-subtitle">Contoh hasil produk digital engineering kami</p>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://via.placeholder.com/600x400/1e3a8a/ffffff?text=MEP+Engineering" alt="MEP"></div>
+            <div class="gallery-item"><img src="https://via.placeholder.com/600x400/3b82f6/ffffff?text=Civil+Engineering" alt="Civil"></div>
+            <div class="gallery-item"><img src="https://via.placeholder.com/600x400/25d366/ffffff?text=HVAC+System" alt="HVAC"></div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <h2 class="section-title">Butuh Bantuan?</h2>
+            <div class="contact-box">
+                <p><strong>Untuk pembelian:</strong> Langsung klik "Lihat Produk" → Anda akan diarahkan ke Link.ID untuk checkout.<br><br>
+                <strong>Untuk pertanyaan teknis atau kendala:</strong> Hubungi kami via WhatsApp.</p>
+                <div class="contact-buttons">
+                    <a href="https://wa.me/6289676580478?text=Halo%204MAN,%20saya%20butuh%20bantuan%20mengenai%20produk%20engineering." class="btn btn-wa" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Chat Support
+                    </a>
+                    <a href="https://lynk.id/amanar" class="btn btn-linkid" target="_blank">
+                        <i class="fas fa-shopping-cart"></i> Kembali ke Toko
+                    </a>
+                </div>
+            </div>
+        </div>    </section>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/6289676580478?text=Halo%204MAN,%20saya%20butuh%20bantuan." class="whatsapp-float" target="_blank" title="Butuh Bantuan? Chat via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 4MAN Digital Produk for Engineering. All rights reserved.</p>
+        <p>MEP CIVIL & HVAC Solutions | Pembayaran via Link.ID</p>
+    </footer>
+
+    <script>
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Track Link.ID clicks
+        document.querySelectorAll('.btn-buy, .btn-linkid').forEach(link => {
+            link.addEventListener('click', function() {
+                if(typeof gtag !== 'undefined') {
+                    gtag('event', 'click', { 'event_category': 'Link.ID', 'event_label': 'Product View', 'value': 1 });
+                }
+            });
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        mobileMenu.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '100%';
+            navLinks.style.left = '0';
+            navLinks.style.right = '0';
+            navLinks.style.background = 'white';
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.padding = '1rem';
+            navLinks.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+        });
+
+        // Navbar scroll effect        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            nav.style.boxShadow = window.scrollY > 100 ? '0 2px 20px rgba(0,0,0,0.1)' : '0 2px 10px rgba(0,0,0,0.1)';
+        });
+    </script>
+</body>
+</html>
