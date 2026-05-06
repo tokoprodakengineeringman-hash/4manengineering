@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Instalasi Listrik Profesional | 4MAN Engineering</title>
+    <meta name="description" content="Aplikasi kalkulator instalasi listrik: Single line diagram, layout saklar, perhitungan beban listrik. Export PDF & DXF. Standar PUIL 2011.">
+    
+    <!-- Google Verification -->
+    <meta name="google-site-verification" content="5XjuLCci6MgoKcxmyRk8RtOlHi3zxTu9rktbF_ChxZA" />
+    
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #3b82f6;
+            --accent: #25d366;
+            --dark: #1f2937;
+            --light: #f3f4f6;
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            --radius: 12px;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .app-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        /* Header */
+        .header {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 2rem;
+            margin-bottom: 2rem;            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .logo {
+            width: 70px;
+            height: 70px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .header-text h1 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+        
+        .header-text p {
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+        
+        /* Main Grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        
+        @media (max-width: 900px) {
+            .main-grid { grid-template-columns: 1fr; }
+        }
+        
+        /* Card Styles */
+        .card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+        }        
+        .card-title {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid var(--light);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: var(--dark);
+            font-size: 0.95rem;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        @media (max-width: 600px) {
+            .form-row { grid-template-columns: 1fr; }
+        }        
+        /* Buttons */
+        .btn {
+            padding: 0.9rem 1.8rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(30, 58, 138, 0.3);
+        }
+        
+        .btn-success {
+            background: var(--accent);
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background: #22c55e;
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 0.8rem;            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+        
+        /* Results Section */
+        .results {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-left: 4px solid var(--secondary);
+            padding: 1.2rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1rem 0;
+        }
+        
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.6rem 0;
+            border-bottom: 1px dashed #cbd5e1;
+        }
+        
+        .result-item:last-child {
+            border-bottom: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: var(--primary);
+        }
+        
+        .result-label {
+            color: #4b5563;
+        }
+        
+        .result-value {
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        /* Diagram Preview */
+        .diagram-container {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            text-align: center;
+            border: 2px dashed #cbd5e1;
+        }
+        
+        .diagram-svg {
+            max-width: 100%;
+            height: auto;
+            background: white;            border-radius: 6px;
+            padding: 1rem;
+        }
+        
+        /* PDF Preview */
+        #pdfPreview {
+            display: none;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+        
+        .pdf-header {
+            text-align: center;
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .pdf-logo {
+            width: 80px;
+            height: 80px;
+            background: var(--primary);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.8rem;
+        }
+        
+        .pdf-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .pdf-subtitle {
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+        
+        .pdf-section {
+            margin: 1.5rem 0;
+        }        
+        .pdf-section-title {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light);
+        }
+        
+        .pdf-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        .pdf-table th,
+        .pdf-table td {
+            padding: 0.8rem;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .pdf-table th {
+            background: #f3f4f6;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .pdf-footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid var(--light);
+            text-align: center;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+        
+        .pdf-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 0.5rem 0;
+        }
+        
+        /* Loading */
+        .loading {            display: none;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #e5e7eb;
+            border-top: 4px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--dark);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            display: none;
+            align-items: center;
+            gap: 0.8rem;
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .toast.success {
+            background: var(--accent);        }
+        
+        .toast.error {
+            background: #ef4444;
+        }
+        
+        /* Footer */
+        .app-footer {
+            text-align: center;
+            padding: 2rem;
+            color: rgba(255,255,255,0.9);
+            font-size: 0.9rem;
+        }
+        
+        .app-footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .app-footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">4M</div>
+            <div class="header-text">
+                <h1>Kalkulator Instalasi Listrik Profesional</h1>
+                <p>Single Line Diagram • Layout Saklar • Perhitungan Beban • Export PDF/DXF</p>
+            </div>
+        </div>
+        
+        <!-- Main Grid -->
+        <div class="main-grid">
+            <!-- Input Section -->
+            <div>
+                <div class="card">
+                    <h2 class="card-title"><i class="fas fa-sliders-h"></i> Parameter Instalasi</h2>
+                    
+                    <div class="form-group">
+                        <label for="buildingType">Jenis Bangunan</label>
+                        <select id="buildingType">
+                            <option value="residential">Rumah Tinggal</option>
+                            <option value="office">Perkantoran</option>
+                            <option value="commercial">Toko/Komersial</option>
+                            <option value="industrial">Industri Ringan</option>                        </select>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="area">Luas Bangunan (m²)</label>
+                            <input type="number" id="area" value="100" min="10" max="10000">
+                        </div>
+                        <div class="form-group">
+                            <label for="voltage">Tegangan (V)</label>
+                            <select id="voltage">
+                                <option value="220">220V (1 Fasa)</option>
+                                <option value="380">380V (3 Fasa)</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mainPower">Daya Terpasang (VA)</label>
+                        <select id="mainPower">
+                            <option value="900">900 VA</option>
+                            <option value="1300">1.300 VA</option>
+                            <option value="2200" selected>2.200 VA</option>
+                            <option value="3500">3.500 VA</option>
+                            <option value="5500">5.500 VA</option>
+                            <option value="custom">Custom...</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group" id="customPowerGroup" style="display:none;">
+                        <label for="customPower">Masukkan Daya Custom (VA)</label>
+                        <input type="number" id="customPower" placeholder="Contoh: 4400">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="rooms">Jumlah Ruangan</label>
+                            <input type="number" id="rooms" value="5" min="1" max="50">
+                        </div>
+                        <div class="form-group">
+                            <label for="acUnits">Jumlah AC</label>
+                            <input type="number" id="acUnits" value="2" min="0" max="20">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="waterHeater">Water Heater?</label>
+                            <select id="waterHeater">
+                                <option value="no">Tidak</option>                                <option value="yes">Ya</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="pump">Pompa Air?</label>
+                            <select id="pump">
+                                <option value="no">Tidak</option>
+                                <option value="yes">Ya</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="btn-group">
+                        <button class="btn btn-primary" onclick="calculate()">
+                            <i class="fas fa-calculator"></i> Hitung Sekarang
+                        </button>
+                        <button class="btn btn-outline" onclick="resetForm()">
+                            <i class="fas fa-redo"></i> Reset
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Results Preview -->
+                <div class="card" id="resultsCard" style="display:none;">
+                    <h2 class="card-title"><i class="fas fa-chart-bar"></i> Hasil Perhitungan</h2>
+                    
+                    <div class="results">
+                        <div class="result-item">
+                            <span class="result-label">Beban Total Terhitung</span>
+                            <span class="result-value" id="totalLoad">-</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Arus Nominal</span>
+                            <span class="result-value" id="current">-</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">MCB yang Direkomendasikan</span>
+                            <span class="result-value" id="mcb">-</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Kabel Utama (NYM)</span>
+                            <span class="result-value" id="cable">-</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Faktor Keamanan</span>
+                            <span class="result-value" id="safety">-</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Diagram Preview -->                    <div class="diagram-container">
+                        <h4 style="margin-bottom:1rem;color:var(--primary);"><i class="fas fa-project-diagram"></i> Single Line Diagram Preview</h4>
+                        <svg class="diagram-svg" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                            <!-- PLN Source -->
+                            <rect x="20" y="80" width="60" height="40" fill="#3b82f6" rx="4"/>
+                            <text x="50" y="105" text-anchor="middle" fill="white" font-size="10" font-weight="bold">PLN</text>
+                            
+                            <!-- KWH Meter -->
+                            <rect x="120" y="80" width="50" height="40" fill="#6366f1" rx="4"/>
+                            <text x="145" y="105" text-anchor="middle" fill="white" font-size="9" font-weight="bold">kWh</text>
+                            
+                            <!-- MCB -->
+                            <rect x="210" y="80" width="50" height="40" fill="#25d366" rx="4"/>
+                            <text x="235" y="105" text-anchor="middle" fill="white" font-size="9" font-weight="bold">MCB</text>
+                            
+                            <!-- Distribution -->
+                            <rect x="300" y="60" width="80" height="80" fill="#1e3a8a" rx="4"/>
+                            <text x="340" y="105" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Box Panel</text>
+                            
+                            <!-- Lines -->
+                            <line x1="80" y1="100" x2="120" y2="100" stroke="#4b5563" stroke-width="2"/>
+                            <line x1="170" y1="100" x2="210" y2="100" stroke="#4b5563" stroke-width="2"/>
+                            <line x1="260" y1="100" x2="300" y2="100" stroke="#4b5563" stroke-width="2"/>
+                            
+                            <!-- Outgoing Circuits -->
+                            <line x1="340" y1="140" x2="340" y2="170" stroke="#4b5563" stroke-width="1.5" stroke-dasharray="3,3"/>
+                            <text x="340" y="190" text-anchor="middle" font-size="8" fill="#6b7280">Load</text>
+                        </svg>
+                    </div>
+                    
+                    <div class="btn-group">
+                        <button class="btn btn-success" onclick="generatePDF()">
+                            <i class="fas fa-file-pdf"></i> Export PDF
+                        </button>
+                        <button class="btn btn-outline" onclick="exportDXF()">
+                            <i class="fas fa-file-export"></i> Export DXF
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Info Section -->
+            <div>
+                <div class="card">
+                    <h2 class="card-title"><i class="fas fa-info-circle"></i> Panduan Singkat</h2>
+                    <ul style="padding-left:1.5rem;color:#4b5563;line-height:1.8;">
+                        <li><strong>PUIL 2011:</strong> Perhitungan berdasarkan Persyaratan Umum Instalasi Listrik Indonesia</li>
+                        <li><strong>Faktor Keamanan:</strong> Otomatis 20-25% untuk antisipasi beban puncak</li>
+                        <li><strong>Rekomendasi MCB:</strong> Dipilih berdasarkan arus nominal + safety factor</li>
+                        <li><strong>Ukuran Kabel:</strong> Disesuaikan dengan arus dan jarak instalasi</li>                        <li><strong>Export DXF:</strong> File teks yang bisa di-import ke AutoCAD</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h2 class="card-title"><i class="fas fa-bolt"></i> Spesifikasi Teknis</h2>
+                    <div style="background:#f8fafc;padding:1rem;border-radius:8px;">
+                        <p style="margin-bottom:0.5rem;"><strong>Standar:</strong> PUIL 2011, SNI 04-0225-2000</p>
+                        <p style="margin-bottom:0.5rem;"><strong>Tegangan:</strong> 220V / 380V</p>
+                        <p style="margin-bottom:0.5rem;"><strong>Faktor Daya:</strong> 0.85 (default)</p>
+                        <p style="margin-bottom:0.5rem;"><strong>Diversity Factor:</strong> 0.7 - 0.9 (otomatis)</p>
+                        <p><strong>Temperature Correction:</strong> 30°C ambient</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h2 class="card-title"><i class="fas fa-gift"></i> Fitur Premium</h2>
+                    <p style="color:#4b5563;margin-bottom:1rem;">Aplikasi ini adalah preview dari produk digital engineering 4MAN. Untuk versi lengkap dengan fitur:</p>
+                    <ul style="padding-left:1.5rem;color:#4b5563;line-height:1.8;">
+                        <li>✅ Multi-room layout designer</li>
+                        <li>✅ Auto-generate wiring diagram</li>
+                        <li>✅ Bill of Materials (BOM) otomatis</li>
+                        <li>✅ Export ke DWG native format</li>
+                        <li>✅ Cloud sync & project management</li>
+                    </ul>
+                    <a href="https://lynk.id/amanar" target="_blank" class="btn btn-primary" style="margin-top:1rem;width:100%;justify-content:center;">
+                        <i class="fas fa-shopping-cart"></i> Dapatkan Versi Lengkap
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- PDF Preview (Hidden by default) -->
+        <div id="pdfPreview">
+            <div class="pdf-header">
+                <div class="pdf-logo">4M</div>
+                <h2 class="pdf-title">Laporan Perhitungan Instalasi Listrik</h2>
+                <p class="pdf-subtitle">4MAN Digital Engineering Indonesia</p>
+                <span class="pdf-badge">Standar PUIL 2011</span>
+            </div>
+            
+            <div class="pdf-section">
+                <h3 class="pdf-section-title">📋 Data Proyek</h3>
+                <table class="pdf-table">
+                    <tr><th>Parameter</th><th>Nilai</th></tr>
+                    <tr><td>Jenis Bangunan</td><td id="pdf_buildingType">-</td></tr>
+                    <tr><td>Luas Bangunan</td><td id="pdf_area">- m²</td></tr>
+                    <tr><td>Tegangan</td><td id="pdf_voltage">- V</td></tr>
+                    <tr><td>Daya Terpasang</td><td id="pdf_power">- VA</td></tr>
+                    <tr><td>Jumlah Ruangan</td><td id="pdf_rooms">-</td></tr>                </table>
+            </div>
+            
+            <div class="pdf-section">
+                <h3 class="pdf-section-title">⚡ Hasil Perhitungan Beban</h3>
+                <table class="pdf-table">
+                    <tr><th>Komponen</th><th>Daya (W)</th><th>Keterangan</th></tr>
+                    <tr><td>Penerangan</td><td id="pdf_lighting">-</td><td>10 W/m²</td></tr>
+                    <tr><td>Stop Kontak Umum</td><td id="pdf_outlets">-</td><td>200 W/unit</td></tr>
+                    <tr><td>AC</td><td id="pdf_ac">-</td><td>900 W/unit</td></tr>
+                    <tr><td>Water Heater</td><td id="pdf_heater">-</td><td>1500 W (jika ada)</td></tr>
+                    <tr><td>Pompa Air</td><td id="pdf_pump">-</td><td>250 W (jika ada)</td></tr>
+                    <tr style="background:#f3f4f6;font-weight:bold;">
+                        <td>Total Beban</td>
+                        <td id="pdf_total">-</td>
+                        <td>Sebelum faktor keamanan</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="pdf-section">
+                <h3 class="pdf-section-title">🔧 Rekomendasi Spesifikasi</h3>
+                <table class="pdf-table">
+                    <tr><th>Komponen</th><th>Spesifikasi</th></tr>
+                    <tr><td>MCB Utama</td><td id="pdf_mcb">-</td></tr>
+                    <tr><td>Kabel Utama (NYM)</td><td id="pdf_cable">-</td></tr>
+                    <tr><td>Arus Nominal</td><td id="pdf_current">-</td></tr>
+                    <tr><td>Faktor Keamanan</td><td id="pdf_safety">-</td></tr>
+                    <tr><td>Kapasitas Cadangan</td><td id="pdf_reserve">-</td></tr>
+                </table>
+            </div>
+            
+            <div class="pdf-section">
+                <h3 class="pdf-section-title">📐 Single Line Diagram</h3>
+                <div style="text-align:center;padding:1rem;background:#f8fafc;border-radius:6px;">
+                    <svg viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;">
+                        <rect x="20" y="55" width="60" height="40" fill="#3b82f6" rx="4"/>
+                        <text x="50" y="80" text-anchor="middle" fill="white" font-size="10" font-weight="bold">PLN</text>
+                        <rect x="120" y="55" width="50" height="40" fill="#6366f1" rx="4"/>
+                        <text x="145" y="80" text-anchor="middle" fill="white" font-size="9" font-weight="bold">kWh</text>
+                        <rect x="210" y="55" width="50" height="40" fill="#25d366" rx="4"/>
+                        <text x="235" y="80" text-anchor="middle" fill="white" font-size="9" font-weight="bold">MCB</text>
+                        <rect x="300" y="35" width="80" height="80" fill="#1e3a8a" rx="4"/>
+                        <text x="340" y="80" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Panel</text>
+                        <line x1="80" y1="75" x2="120" y2="75" stroke="#4b5563" stroke-width="2"/>
+                        <line x1="170" y1="75" x2="210" y2="75" stroke="#4b5563" stroke-width="2"/>
+                        <line x1="260" y1="75" x2="300" y2="75" stroke="#4b5563" stroke-width="2"/>
+                        <line x1="340" y1="115" x2="340" y2="140" stroke="#4b5563" stroke-width="1.5" stroke-dasharray="3,3"/>
+                        <text x="340" y="155" text-anchor="middle" font-size="8" fill="#6b7280">Load</text>
+                    </svg>                    <p style="margin-top:0.5rem;font-size:0.85rem;color:#6b7280;">*Diagram skematik - untuk detail lengkap lihat file DXF</p>
+                </div>
+            </div>
+            
+            <div class="pdf-footer">
+                <p><strong>4MAN Digital Engineering Indonesia</strong></p>
+                <p>Toko Produk Digital Engineering Terlengkap</p>
+                <p style="margin-top:0.5rem;">📧 abdurrakhmanaman@gmail.com | 📱 0896-7658-0478</p>
+                <p style="margin-top:0.3rem;font-size:0.85rem;">Dokumen dihasilkan otomatis • Valid untuk perencanaan awal</p>
+                <p style="margin-top:0.5rem;font-weight:600;color:var(--primary);">https://lynk.id/amanar</p>
+            </div>
+        </div>
+        
+        <!-- Loading -->
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Sedang memproses perhitungan & generating PDF...</p>
+        </div>
+    </div>
+    
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Berhasil!</span>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="app-footer">
+        <p>© 2024 <a href="https://tokoprodakengineeringman-hash.github.io/4manengineering/">4MAN Digital Engineering</a> • Aplikasi Kalkulator Instalasi Listrik</p>
+        <p style="margin-top:0.5rem;">Standar PUIL 2011 • Untuk keperluan perencanaan teknis</p>
+    </footer>
+
+    <script>
+        // Show/hide custom power input
+        document.getElementById('mainPower').addEventListener('change', function() {
+            const customGroup = document.getElementById('customPowerGroup');
+            customGroup.style.display = this.value === 'custom' ? 'block' : 'none';
+        });
+        
+        // Main calculation function
+        function calculate() {
+            // Get input values
+            const buildingType = document.getElementById('buildingType').value;
+            const area = parseFloat(document.getElementById('area').value);
+            const voltage = parseInt(document.getElementById('voltage').value);
+            let mainPower = document.getElementById('mainPower').value;
+            const rooms = parseInt(document.getElementById('rooms').value);
+            const acUnits = parseInt(document.getElementById('acUnits').value);
+            const waterHeater = document.getElementById('waterHeater').value === 'yes';
+            const pump = document.getElementById('pump').value === 'yes';            
+            if (mainPower === 'custom') {
+                mainPower = parseFloat(document.getElementById('customPower').value);
+                if (!mainPower || mainPower < 100) {
+                    showToast('Masukkan daya custom yang valid!', 'error');
+                    return;
+                }
+            } else {
+                mainPower = parseInt(mainPower);
+            }
+            
+            // PUIL 2011 Load Calculation
+            // Lighting: 10 W/m² for residential
+            const lightingLoad = area * 10;
+            
+            // Outlets: 200W per outlet, estimate 2 per room
+            const outletLoad = rooms * 2 * 200;
+            
+            // AC: 900W per unit (1 PK)
+            const acLoad = acUnits * 900;
+            
+            // Water heater: 1500W if yes
+            const heaterLoad = waterHeater ? 1500 : 0;
+            
+            // Pump: 250W if yes
+            const pumpLoad = pump ? 250 : 0;
+            
+            // Total connected load
+            const totalConnected = lightingLoad + outletLoad + acLoad + heaterLoad + pumpLoad;
+            
+            // Diversity factor based on building type
+            let diversityFactor = 0.8;
+            if (buildingType === 'office') diversityFactor = 0.7;
+            if (buildingType === 'commercial') diversityFactor = 0.75;
+            if (buildingType === 'industrial') diversityFactor = 0.85;
+            
+            // Demand load
+            const demandLoad = totalConnected * diversityFactor;
+            
+            // Safety factor: 20-25%
+            const safetyFactor = 1.25;
+            const designLoad = demandLoad * safetyFactor;
+            
+            // Current calculation: I = P / (V × pf)
+            const powerFactor = 0.85;
+            const current = designLoad / (voltage * powerFactor);
+            
+            // MCB selection (standard ratings)
+            const mcbRatings = [6, 10, 16, 20, 25, 32, 40, 50, 63];
+            let selectedMCB = mcbRatings.find(rating => rating >= Math.ceil(current)) || 63;            
+            // Cable selection based on current (NYM cable, 30°C ambient)
+            let cableSize;
+            if (selectedMCB <= 16) cableSize = '2.5 mm²';
+            else if (selectedMCB <= 25) cableSize = '4 mm²';
+            else if (selectedMCB <= 32) cableSize = '6 mm²';
+            else if (selectedMCB <= 50) cableSize = '10 mm²';
+            else cableSize = '16 mm²';
+            
+            // Update results display
+            document.getElementById('totalLoad').textContent = `${Math.round(designLoad)} W`;
+            document.getElementById('current').textContent = `${current.toFixed(1)} A`;
+            document.getElementById('mcb').textContent = `${selectedMCB} A`;
+            document.getElementById('cable').textContent = cableSize;
+            document.getElementById('safety').textContent = '25%';
+            
+            // Update PDF preview data
+            document.getElementById('pdf_buildingType').textContent = 
+                buildingType === 'residential' ? 'Rumah Tinggal' :
+                buildingType === 'office' ? 'Perkantoran' :
+                buildingType === 'commercial' ? 'Toko/Komersial' : 'Industri Ringan';
+            document.getElementById('pdf_area').textContent = `${area} m²`;
+            document.getElementById('pdf_voltage').textContent = `${voltage} V`;
+            document.getElementById('pdf_power').textContent = `${mainPower} VA`;
+            document.getElementById('pdf_rooms').textContent = rooms;
+            
+            document.getElementById('pdf_lighting').textContent = `${Math.round(lightingLoad)} W`;
+            document.getElementById('pdf_outlets').textContent = `${Math.round(outletLoad)} W`;
+            document.getElementById('pdf_ac').textContent = `${Math.round(acLoad)} W`;
+            document.getElementById('pdf_heater').textContent = waterHeater ? '1500 W' : '-';
+            document.getElementById('pdf_pump').textContent = pump ? '250 W' : '-';
+            document.getElementById('pdf_total').textContent = `${Math.round(totalConnected)} W`;
+            
+            document.getElementById('pdf_mcb').textContent = `${selectedMCB} A`;
+            document.getElementById('pdf_cable').textContent = `NYM ${cableSize}`;
+            document.getElementById('pdf_current').textContent = `${current.toFixed(1)} A`;
+            document.getElementById('pdf_safety').textContent = '25%';
+            document.getElementById('pdf_reserve').textContent = `${Math.round(mainPower - designLoad)} W`;
+            
+            // Show results
+            document.getElementById('resultsCard').style.display = 'block';
+            showToast('Perhitungan berhasil! ✅', 'success');
+            
+            // Scroll to results
+            document.getElementById('resultsCard').scrollIntoView({behavior: 'smooth'});
+        }
+        
+        // Generate PDF
+        async function generatePDF() {
+            const { jsPDF } = window.jspdf;            const loading = document.getElementById('loading');
+            const toast = document.getElementById('toast');
+            
+            loading.style.display = 'block';
+            
+            try {
+                // Show PDF preview first
+                const pdfPreview = document.getElementById('pdfPreview');
+                pdfPreview.style.display = 'block';
+                
+                // Wait for render
+                await new Promise(resolve => setTimeout(resolve, 500));
+                
+                // Capture with html2canvas
+                const canvas = await html2canvas(pdfPreview, {
+                    scale: 2,
+                    useCORS: true,
+                    backgroundColor: '#ffffff'
+                });
+                
+                // Create PDF
+                const imgData = canvas.toDataURL('image/png');
+                const pdf = new jsPDF({
+                    orientation: 'portrait',
+                    unit: 'mm',
+                    format: 'a4'
+                });
+                
+                const imgWidth = 210; // A4 width in mm
+                const pageHeight = 297; // A4 height in mm
+                const imgHeight = canvas.height * imgWidth / canvas.width;
+                
+                pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+                
+                // Add metadata
+                pdf.setProperties({
+                    title: 'Laporan Instalasi Listrik - 4MAN Engineering',
+                    subject: 'Perhitungan Beban Listrik',
+                    author: '4MAN Digital Engineering',
+                    creator: 'Kalkulator Instalasi Listrik 4MAN'
+                });
+                
+                // Save PDF
+                const timestamp = new Date().toISOString().slice(0,10);
+                pdf.save(`Laporan-Listrik-4MAN-${timestamp}.pdf`);
+                
+                showToast('PDF berhasil diunduh! 📄', 'success');
+                
+            } catch (error) {
+                console.error('PDF generation error:', error);                showToast('Gagal generate PDF. Coba lagi.', 'error');
+            } finally {
+                loading.style.display = 'none';
+                document.getElementById('pdfPreview').style.display = 'none';
+            }
+        }
+        
+        // Export DXF (text format for AutoCAD import)
+        function exportDXF() {
+            const buildingType = document.getElementById('buildingType').value;
+            const area = document.getElementById('area').value;
+            const voltage = document.getElementById('voltage').value;
+            const power = document.getElementById('mainPower').value;
+            const mcb = document.getElementById('mcb').textContent;
+            const cable = document.getElementById('cable').textContent;
+            
+            // DXF content (simplified)
+            const dxfContent = `0
+SECTION
+2
+HEADER
+9
+$ACADVER
+1
+AC1027
+0
+ENDSEC
+0
+SECTION
+2
+ENTITIES
+0
+TEXT
+8
+0
+10
+10.0
+20
+10.0
+40
+2.5
+1
+4MAN Engineering - Electrical Calculation
+0
+TEXT
+8
+0
+10
+10.0
+2015.0
+40
+2.0
+1
+Building Type: ${buildingType} | Area: ${area} m2
+0
+TEXT
+8
+0
+10
+10.0
+20
+20.0
+40
+2.0
+1
+Voltage: ${voltage}V | Power: ${power} VA
+0
+TEXT
+8
+0
+10
+10.0
+20
+25.0
+40
+2.0
+1
+Recommended MCB: ${mcb} | Cable: ${cable}
+0
+LINE
+8
+0
+10
+10.0
+20
+30.0
+11
+200.0
+21
+30.0
+0
+LINE
+8
+0
+10
+10.0
+20
+35.0
+11200.0
+21
+35.0
+0
+ENDSEC
+0
+EOF`;
+            
+            // Create download
+            const blob = new Blob([dxfContent], {type: 'text/plain'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `4MAN-Electrical-${new Date().toISOString().slice(0,10)}.dxf`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            
+            showToast('File DXF berhasil diunduh! 🔧', 'success');
+        }
+        
+        // Reset form
+        function resetForm() {
+            document.getElementById('buildingType').value = 'residential';
+            document.getElementById('area').value = '100';
+            document.getElementById('voltage').value = '220';
+            document.getElementById('mainPower').value = '2200';
+            document.getElementById('customPowerGroup').style.display = 'none';
+            document.getElementById('rooms').value = '5';
+            document.getElementById('acUnits').value = '2';
+            document.getElementById('waterHeater').value = 'no';
+            document.getElementById('pump').value = 'no';
+            document.getElementById('resultsCard').style.display = 'none';
+            showToast('Form direset! 🔄', 'success');
+        }
+        
+        // Toast notification
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            
+            toast.className = `toast ${type}`;
+            toastMessage.textContent = message;
+            toast.style.display = 'flex';
+            
+            setTimeout(() => {
+                toast.style.display = 'none';
+            }, 3000);
+        }        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Auto-calculate on load for demo
+            // calculate();
+        });
+    </script>
+</body>
+                              </html>
