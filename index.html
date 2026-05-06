@@ -540,6 +540,42 @@
             font-size: 1.2rem;             margin-bottom: 0.5rem; 
         }
         
+        /* Blog/Article Section */
+        .blog-section {
+            padding: 4rem 2rem;
+            background: var(--white);
+        }
+        .blog-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .blog-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        .blog-section p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+        .blog-card {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        .blog-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .blog-card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
         /* Gallery */
         .gallery { 
             padding: 5rem 2rem; 
@@ -550,8 +586,7 @@
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
             gap: 2rem; 
-        }
-        .gallery-item {
+        }        .gallery-item {
             position: relative; 
             overflow: hidden; 
             border-radius: 15px;
@@ -586,7 +621,8 @@
         }
         .contact-box p { 
             margin-bottom: 2rem; 
-            color: var(--text-light);         }
+            color: var(--text-light); 
+        }
         .contact-buttons { 
             display: flex; 
             gap: 1rem; 
@@ -599,8 +635,7 @@
             position: fixed; 
             bottom: 30px; 
             right: 30px;
-            width: 60px; 
-            height: 60px; 
+            width: 60px;             height: 60px; 
             background: var(--accent-color); 
             color: white;
             border-radius: 50%; 
@@ -635,7 +670,8 @@
         @keyframes pulse { 
             0%, 100% { transform: scale(1); } 
             50% { transform: scale(1.05); } 
-        }        
+        }
+        
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .mobile-menu { display: block; }
@@ -648,8 +684,7 @@
             .whatsapp-float { 
                 width: 50px; 
                 height: 50px; 
-                font-size: 1.5rem; 
-                bottom: 20px; 
+                font-size: 1.5rem;                 bottom: 20px; 
                 right: 20px; 
             }
         }
@@ -668,6 +703,7 @@
                 <li><a href="#home">Beranda</a></li>
                 <li><a href="#produk">Produk</a></li>
                 <li><a href="#cara-beli">Cara Beli</a></li>
+                <li><a href="#blog">Artikel</a></li>
                 <li><a href="#gallery">Galeri</a></li>
                 <li><a href="#contact">Bantuan</a></li>
             </ul>
@@ -684,7 +720,8 @@
             </div>
             
             <h1>Jual File AutoCAD MEP Civil HVAC Terlengkap di Indonesia</h1>
-            <h2>Solusi Produk Digital Engineering untuk MEP, Civil, HVAC & 3D BIM</h2>            <p>
+            <h2>Solusi Produk Digital Engineering untuk MEP, Civil, HVAC & 3D BIM</h2>
+            <p>
                 Cari <strong>file AutoCAD MEP</strong>, <strong>gambar teknik sipil</strong>, 
                 <strong>template HVAC</strong>, atau <strong>file 3D BIM</strong>? 
                 4MAN Digital Engineering menyediakan ribuan file teknik berkualitas tinggi 
@@ -696,8 +733,7 @@
                     <i class="fas fa-shopping-cart"></i> Belanja Sekarang
                 </a>
                 <a href="#cara-beli" class="btn btn-secondary">
-                    <i class="fas fa-info-circle"></i> Cara Pembelian
-                </a>
+                    <i class="fas fa-info-circle"></i> Cara Pembelian                </a>
             </div>
         </div>
     </section>
@@ -733,7 +769,8 @@
                 </div>
                 <div class="why-item">
                     <h3>✅ Multi Format</h3>
-                    <p>Tersedia format DWG, PDF, RVT, SKP, Excel. Kompatibel dengan AutoCAD, Revit, SketchUp</p>                </div>
+                    <p>Tersedia format DWG, PDF, RVT, SKP, Excel. Kompatibel dengan AutoCAD, Revit, SketchUp</p>
+                </div>
                 <div class="why-item">
                     <h3>✅ Garansi Uang Kembali</h3>
                     <p>Jika file tidak sesuai atau bermasalah, uang Anda kami kembalikan 100%</p>
@@ -745,8 +782,7 @@
     <!-- Products Section -->
     <section class="products" id="produk">
         <h2 class="section-title">Kategori Produk Digital Engineering</h2>
-        <p class="section-subtitle">Klik kategori untuk lihat detail produk & harga di Link.ID</p>
-        <div class="product-grid">
+        <p class="section-subtitle">Klik kategori untuk lihat detail produk & harga di Link.ID</p>        <div class="product-grid">
             <!-- Product 1: MEP Engineering -->
             <div class="product-card">
                 <div class="product-img">
@@ -782,7 +818,8 @@
                 </div>
                 <div class="product-info">
                     <h3>Gambar Teknik Sipil & Struktur</h3>
-                    <p>                        <strong>Gambar teknik sipil</strong> lengkap untuk pondasi, struktur, 
+                    <p>
+                        <strong>Gambar teknik sipil</strong> lengkap untuk pondasi, struktur, 
                         arsitektur bangunan. File AutoCAD DWG siap edit dengan detail 
                         <strong>kolom, balok, atap, denah</strong>, dan <strong>shop drawing</strong>. 
                         Termasuk perhitungan struktur dan RAB. Cocok untuk kontraktor, 
@@ -794,8 +831,7 @@
                         <li>Gambar sloof, kolom praktis, balok</li>
                         <li>Denah atap & kuda-kuda</li>
                         <li>Perhitungan struktur Excel</li>
-                    </ul>
-                    <span class="price-tag">Mulai Rp 10.000</span>
+                    </ul>                    <span class="price-tag">Mulai Rp 10.000</span>
                     <a href="https://lynk.id/amanar" class="btn-buy" target="_blank" rel="noopener noreferrer">
                         <i class="fas fa-arrow-right"></i> Lihat Produk
                     </a>
@@ -831,7 +867,8 @@
                 </div>
             </div>
 
-            <!-- Product 4: 3D Modeling & BIM -->            <div class="product-card">
+            <!-- Product 4: 3D Modeling & BIM -->
+            <div class="product-card">
                 <div class="product-img">
                     <i class="fas fa-cube"></i>
                 </div>
@@ -843,8 +880,7 @@
                         Termasuk <strong>visualisasi 3D bangunan</strong>, 
                         <strong>clash detection report</strong>, dan model arsitektur. 
                         Cocok untuk arsitek, BIM modeler, dan visualisator. Siap edit 
-                        dan customize untuk proyek Anda.
-                    </p>
+                        dan customize untuk proyek Anda.                    </p>
                     <p><strong>Isi Paket:</strong></p>
                     <ul style="margin-left: 1.5rem; color: var(--text-light); font-size: 0.9rem;">
                         <li>Model 3D rumah & gedung</li>
@@ -880,7 +916,8 @@
                         <p>Anda akan diarahkan ke Link.ID untuk melihat detail produk, deskripsi lengkap, dan harga</p>
                     </div>
                 </div>
-                <div class="step">                    <div class="step-number">3</div>
+                <div class="step">
+                    <div class="step-number">3</div>
                     <div class="step-content">
                         <h3>Bayar via Link.ID</h3>
                         <p>Pembayaran otomatis via OVO, GoPay, Dana, atau Transfer Bank. Proses cepat & aman</p>
@@ -892,8 +929,7 @@
                         <h3>File Otomatis Terkirim</h3>
                         <p>Setelah pembayaran berhasil, file otomatis terkirim ke email & WhatsApp Anda. Langsung download!</p>
                     </div>
-                </div>
-            </div>
+                </div>            </div>
         </div>
     </section>
 
@@ -929,8 +965,23 @@
                 </div>
                 <div class="user-item">
                     <i class="fas fa-chalkboard-teacher"></i>
-                    <h3>Dosen & Pengajar</h3>                    <p>Materi pembelajaran teknik di kampus</p>
+                    <h3>Dosen & Pengajar</h3>
+                    <p>Materi pembelajaran teknik di kampus</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog/Article Section -->
+    <section class="blog-section" id="blog">
+        <div class="blog-container">
+            <h2>📚 Artikel & Tips Engineering</h2>
+            <p>Pelajari lebih lanjut tentang produk digital engineering:</p>
+            <div class="blog-card">
+                <h3>Panduan Lengkap File AutoCAD MEP & Sipil</h3>                <p>Temukan tips, tutorial, dan panduan lengkap penggunaan file AutoCAD untuk proyek engineering Anda. Cocok untuk drafter, engineer, dan mahasiswa teknik.</p>
+                <a href="artikel-mep-sipil.html" class="btn btn-linkid">
+                    <i class="fas fa-book"></i> Baca Artikel Selengkapnya
+                </a>
             </div>
         </div>
     </section>
@@ -976,9 +1027,9 @@
     </section>
 
     <!-- Contact -->
-    <section class="contact" id="contact">
-        <div class="contact-container">
-            <h2 class="section-title">Butuh Bantuan?</h2>            <div class="contact-box">
+    <section class="contact" id="contact">        <div class="contact-container">
+            <h2 class="section-title">Butuh Bantuan?</h2>
+            <div class="contact-box">
                 <p>
                     <strong>Untuk pembelian:</strong> Langsung klik "Lihat Produk" → Anda akan diarahkan ke Link.ID untuk checkout.<br><br>
                     <strong>Untuk pertanyaan teknis atau kendala:</strong> Hubungi kami via WhatsApp. Kami siap membantu!
@@ -1025,9 +1076,9 @@
                 if(typeof gtag !== 'undefined') {
                     gtag('event', 'conversion', {
                         'send_to': 'AW-XXXXXXXX/label',
-                        'event_category': 'Link.ID',
-                        'event_label': 'Product Purchase',
-                        'value': 1                    });
+                        'event_category': 'Link.ID',                        'event_label': 'Product Purchase',
+                        'value': 1
+                    });
                 }
             });
         });
@@ -1054,4 +1105,4 @@
         });
     </script>
 </body>
-</html> 
+    </html>
