@@ -3,401 +3,629 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prodak Digital Mouza Engineer - Solusi Teknik & MEP Terbaik</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Pusat produk digital dan solusi teknik untuk mendukung pekerjaan engineering Anda. Tersedia AutoCAD MEP Files, HVAC Calculators, Pipe Sizing Tools, dan Electrical Tools.">
-    <meta name="keywords" content="Prodak Digital Mouza Engineer, MEP Design Files, HVAC Tools, Plumbing Tools, Electrical Tools, Engineering Software Indonesia, AutoCAD MEP, Kalkulator HVAC">
-    <meta name="author" content="Mouza Engineer">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mouzaengineer.com/">
-    <meta property="og:title" content="Prodak Digital Mouza Engineer - Solusi Teknik & MEP Terbaik">
-    <meta property="og:description" content="Dapatkan tools engineering terbaik untuk AutoCAD, HVAC, Plumbing, dan Kelistrikan hanya di Prodak Digital Mouza Engineer.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&h=630">
+    <title>Generator Denah Rumah 2D | Mouza Engineer</title>
+    <meta name="description" content="Generator denah rumah 2D otomatis untuk teknisi & engineer MEP Indonesia. Output siap AutoCAD, PDF, Excel. Versi 2.0 PRO.">
+    <meta name="keywords" content="generator denah rumah, denah 2D, AutoCAD, PDF export, Excel, teknik sipil, mouza engineer">
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Verification -->
+    <meta name="google-site-verification" content="5XjuLCci6MgoKcxmyRk8RtOlHi3zxTu9rktbF_ChxZA" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
     <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
+        :root {
+            --primary: #1e3a8a;
+            --secondary: #3b82f6;
+            --accent: #10b981;
+            --dark: #1f2937;
+            --light: #f3f4f6;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.85);
+            --radius: 16px;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
+            font-family: 'Inter', system-ui, sans-serif;
+            background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding-bottom: 3rem;        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
         }
-        .sidebar-active {
-            background-color: #eff6ff;
-            color: #2563eb;
-            border-right: 4px solid #2563eb;
+
+        /* Header */
+        header {
+            padding: 1.5rem 0;
         }
-        .card-shadow {
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border-radius: var(--radius);
+            padding: 1.2rem 2rem;
+            box-shadow: var(--shadow);
         }
-        .hero-bg {
-            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=80');
-            background-size: cover;
-            background-position: center;
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
         }
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 6px;
+
+        .logo-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(30, 58, 138, 0.2);
         }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
+        .logo-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 10px;
+
+        .logo-text h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary);
         }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
+        .logo-text p {            font-size: 0.95rem;
+            color: #6b7280;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 2.5rem 0;
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--dark);
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Card */
+        .card {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            position: relative;
+        }
+        .card-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 56px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));            border-radius: 2px;
+        }
+
+        /* Form Grid */
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.85rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 0.9rem 1.8rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), #1d4ed8);
+            color: white;            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 58, 138, 0.4);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, var(--accent), #059669);
+            color: white;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+        .btn-success:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        /* Results Table */
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .results-table th,
+        .results-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }        .results-table th {
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+        .results-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2.5rem 0;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: rgba(255, 255, 255, 0.95);
+            text-decoration: none;
+            font-weight: 600;
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col md:flex-row">
-
-    <!-- Sidebar Left -->
-    <aside class="w-full md:w-64 bg-white border-r border-gray-200 flex flex-col sticky top-0 h-screen z-50 overflow-y-auto">
-        <div class="p-6 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center text-white font-bold text-xs text-center p-1 leading-tight">
-                    MOUZA
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-img">
+                        <img src="logo.png" alt="Mouza Engineer — Prodak Digital">
+                    </div>
+                    <div class="logo-text">
+                        <h1>Mouza Engineer</h1>
+                        <p>Prodak Digital Engineering — Teknisi & Engineer MEP Indonesia</p>
+                    </div>
                 </div>
                 <div>
-                    <h1 class="text-sm font-bold text-blue-900 leading-tight">Prodak Digital</h1>
-                    <p class="text-xs text-blue-700 font-semibold">Mouza Engineer</p>
+                    <span class="badge" style="background:#e0f2fe; color:#1e3a8a; padding:0.4rem 1rem; border-radius:20px; font-weight:600;">Versi 2.0 PRO</span>
                 </div>
             </div>
-            <button class="md:hidden text-gray-500">
-                <i class="fas fa-bars text-xl"></i>
-            </button>
-        </div>
+        </header>
 
-        <nav class="flex-1 px-4 space-y-1">
-            <a href="#" class="flex items-center space-x-3 p-3 rounded-lg sidebar-active transition-all">
-                <i class="fas fa-home w-5"></i>
-                <span class="font-medium text-sm">Profil Usaha Saya</span>
-            </a>
-            <a href="#" class="flex items-center space-x-3 p-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
-                <i class="fas fa-user w-5"></i>
-                <span class="font-medium text-sm">Profil</span>
-            </a>
-            <a href="#" class="flex items-center space-x-3 p-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
-                <i class="fas fa-gift w-5"></i>
-                <span class="font-medium text-sm">Aplikasi Gratis</span>
-            </a>
-            <a href="#" class="flex items-center space-x-3 p-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
-                <i class="fas fa-file-alt w-5"></i>
-                <span class="font-medium text-sm">Artikel Terkait Usaha Saya</span>
-            </a>
-            <a href="#" class="flex items-center space-x-3 p-3 rounded-lg text-gray-600 hover:bg-gray-50 transition-all">
-                <i class="fas fa-shopping-cart w-5"></i>
-                <span class="font-medium text-sm">Katalog Produk</span>
-            </a>
-        </nav>
+        <!-- Hero -->
+        <section class="hero">
+            <h1>Generator Denah Rumah 2D</h1>
+            <p>Output siap AutoCAD — PDF, Excel, DWG. Untuk teknisi & engineer MEP Indonesia.</p>
+        </section>
 
-        <div class="p-4 mt-auto">
-            <div class="bg-blue-50 rounded-xl p-4 border border-blue-100">
-                <div class="flex items-center space-x-3 mb-3">
-                    <div class="bg-blue-600 text-white p-2 rounded-lg">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <div>
-                        <p class="text-xs font-bold text-blue-900">Butuh Bantuan?</p>
-                        <p class="text-[10px] text-blue-700">Hubungi kami jika Anda memiliki pertanyaan.</p>
+        <!-- Form -->        <div class="card">
+            <h2 class="card-title"><i class="fas fa-file-alt"></i> Informasi Proyek</h2>
+            
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Nama Proyek</label>
+                    <input type="text" id="projName" placeholder="Contoh: Rumah Pak Budi">
+                </div>
+                <div class="form-group">
+                    <label>Pemilik</label>
+                    <input type="text" id="owner" placeholder="Nama pemilik">
+                </div>
+                <div class="form-group">
+                    <label>Alamat</label>
+                    <input type="text" id="address" placeholder="Jl. Contoh No. 123">
+                </div>
+                <div class="form-group">
+                    <label>Kota / Lokasi</label>
+                    <input type="text" id="city" placeholder="Jakarta Selatan">
+                </div>
+                <div class="form-group">
+                    <label>Tanggal Rencana</label>
+                    <input type="date" id="date">
+                </div>
+                <div class="form-group">
+                    <label>Arsitek / Perencana</label>
+                    <input type="text" id="architect" placeholder="Nama arsitek">
+                </div>
+                <div class="form-group">
+                    <label>Nomor Gambar</label>
+                    <input type="text" id="drawingNo" placeholder="DRH-001">
+                </div>
+                <div class="form-group">
+                    <label>Catatan</label>
+                    <textarea id="notes" rows="2" placeholder="Catatan tambahan..."></textarea>
+                </div>
+            </div>
+
+            <h2 class="card-title"><i class="fas fa-ruler-combined"></i> Dimensi Utama Rumah</h2>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Panjang Rumah (m)</label>
+                    <input type="number" id="length" value="12" min="5" step="0.1">
+                </div>
+                <div class="form-group">
+                    <label>Lebar Rumah (m)</label>
+                    <input type="number" id="width" value="10" min="5" step="0.1">
+                </div>
+                <div class="form-group">
+                    <label>Tinggi Dinding (m)</label>                    <input type="number" id="wallHeight" value="3" min="2" step="0.1">
+                </div>
+                <div class="form-group">
+                    <label>Jumlah Lantai</label>
+                    <select id="floors">
+                        <option value="1">1 Lantai</option>
+                        <option value="2">2 Lantai</option>
+                        <option value="3">3 Lantai</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Jenis Atap</label>
+                    <select id="roofType">
+                        <option>Pelana (Segitiga)</option>
+                        <option>Limas (Hip Roof)</option>
+                        <option>Datar</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Tinggi Atap (m)</label>
+                    <input type="number" id="roofHeight" value="2.5" min="1" step="0.1">
+                </div>
+                <div class="form-group">
+                    <label>Ketebalan Dinding (m)</label>
+                    <input type="number" id="wallThick" value="0.15" min="0.1" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label>Jenis Pondasi</label>
+                    <select id="foundation">
+                        <option>Batu Kali</option>
+                        <option>Cakar Ayam</option>
+                        <option>Tiang Pancang</option>
+                    </select>
+                </div>
+            </div>
+
+            <h2 class="card-title"><i class="fas fa-home"></i> Dimensi Ruangan</h2>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Teras Depan (m)</label>
+                    <div style="display:flex;gap:0.5rem;">
+                        <input type="number" placeholder="Lebar" style="flex:1;">
+                        <input type="number" placeholder="Panjang" style="flex:1;">
                     </div>
                 </div>
-                <button onclick="contactWhatsApp()" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg text-xs font-bold transition-colors">
-                    Hubungi Kami
+                <div class="form-group">
+                    <label>Ruang Tamu (m)</label>
+                    <div style="display:flex;gap:0.5rem;">
+                        <input type="number" placeholder="Lebar" style="flex:1;">
+                        <input type="number" placeholder="Panjang" style="flex:1;">                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Kamar Tidur Utama (m)</label>
+                    <div style="display:flex;gap:0.5rem;">
+                        <input type="number" placeholder="Lebar" style="flex:1;">
+                        <input type="number" placeholder="Panjang" style="flex:1;">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Kamar Mandi (m)</label>
+                    <div style="display:flex;gap:0.5rem;">
+                        <input type="number" placeholder="Lebar" style="flex:1;">
+                        <input type="number" placeholder="Panjang" style="flex:1;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="generateDenah()">
+                    <i class="fas fa-play-circle"></i> GENERATE DENAH
+                </button>
+                <button class="btn btn-success" onclick="exportPDF()">
+                    <i class="fas fa-file-pdf"></i> EXPORT PDF LAPORAN
+                </button>
+                <button class="btn btn-outline" onclick="resetForm()">
+                    <i class="fas fa-redo"></i> RESET
                 </button>
             </div>
-            <button class="w-full flex items-center space-x-3 p-3 mt-4 text-gray-600 hover:text-red-600 transition-all">
-                <i class="fas fa-sign-out-alt w-5"></i>
-                <span class="font-medium text-sm">Keluar</span>
-            </button>
         </div>
-    </aside>
 
-    <!-- Main Content -->
-    <main class="flex-1 p-4 md:p-8 overflow-x-hidden">
-        <!-- Hero Section -->
-        <section class="hero-bg rounded-2xl p-8 mb-10 border border-gray-100 card-shadow">
-            <div class="max-w-2xl">
-                <p class="text-blue-600 font-bold text-sm mb-2">Selamat Datang di</p>
-                <h2 class="text-3xl md:text-4xl font-extrabold text-blue-900 mb-4">Prodak Digital Mouza Engineer</h2>
-                <p class="text-gray-600 leading-relaxed">
-                    Pusat produk digital dan solusi teknik untuk mendukung pekerjaan engineering Anda menjadi lebih mudah, cepat, dan akurat.
-                </p>
-            </div>
-        </section>
+        <!-- Preview -->
+        <div class="card" id="preview" style="display:none;">
+            <h2 class="card-title"><i class="fas fa-eye"></i> Hasil Denah Rumah</h2>
+            
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Nilai</th>
+                        <th>Satuan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Panjang Rumah</td><td id="outLength">12.0</td><td>meter</td></tr>
+                    <tr><td>Lebar Rumah</td><td id="outWidth">10.0</td><td>meter</td></tr>
+                    <tr><td>Tinggi Dinding</td><td id="outWallHeight">3.0</td><td>meter</td></tr>
+                    <tr><td>Jumlah Lantai</td><td id="outFloors">2</td><td>Lantai</td></tr>
+                    <tr><td>Jenis Atap</td><td id="outRoof">Limas (Hip Roof)</td><td>-</td></tr>
+                    <tr><td>Ketebalan Dinding</td><td id="outWallThick">0.15</td><td>meter</td></tr>                    <tr><td>Jenis Pondasi</td><td id="outFoundation">Cakar Ayam</td><td>-</td></tr>
+                    <tr><td>Luas Bangunan</td><td id="outArea">120.0</td><td>m²</td></tr>
+                </tbody>
+            </table>
 
-        <!-- Produk Unggulan -->
-        <section class="mb-10">
-            <div class="flex items-center justify-between mb-6">
-                <h3 class="text-xl font-bold text-gray-800">Produk Unggulan</h3>
-                <div class="flex space-x-2">
-                    <button class="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-white hover:shadow transition-all">
-                        <i class="fas fa-chevron-left text-xs"></i>
-                    </button>
-                    <button class="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-white hover:shadow transition-all">
-                        <i class="fas fa-chevron-right text-xs"></i>
-                    </button>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Card 1 -->
-                <div class="bg-white rounded-xl overflow-hidden border border-gray-100 card-shadow hover:translate-y-[-4px] transition-transform duration-300">
-                    <div class="relative h-40 bg-gray-200">
-                        <img src="https://images.unsplash.com/photo-1503387762-592dee58c460?auto=format&fit=crop&w=400&q=80" alt="AutoCAD MEP" class="w-full h-full object-cover">
-                        <div class="absolute top-3 left-3 bg-white p-1.5 rounded shadow-sm">
-                            <span class="text-red-600 font-bold text-lg">A</span>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h4 class="font-bold text-gray-800 mb-1">AutoCAD MEP Files</h4>
-                        <p class="text-[10px] text-gray-500 mb-3 h-12 overflow-hidden">Koleksi gambar kerja MEP siap pakai untuk berbagai kebutuhan proyek.</p>
-                        <p class="text-blue-700 font-bold mb-4">Rp 199.000</p>
-                        <button onclick="viewDetail('AutoCAD MEP Files')" class="w-full border border-blue-600 text-blue-600 py-2 rounded-lg text-xs font-bold hover:bg-blue-50 transition-colors">
-                            Lihat Detail
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="bg-white rounded-xl overflow-hidden border border-gray-100 card-shadow hover:translate-y-[-4px] transition-transform duration-300">
-                    <div class="relative h-40 bg-gray-200">
-                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=400&q=80" alt="HVAC" class="w-full h-full object-cover">
-                        <div class="absolute top-3 left-3 bg-white p-1.5 rounded shadow-sm">
-                            <i class="fas fa-snowflake text-blue-400"></i>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h4 class="font-bold text-gray-800 mb-1">HVAC Calculators</h4>
-                        <p class="text-[10px] text-gray-500 mb-3 h-12 overflow-hidden">Kalkulator HVAC untuk perhitungan beban pendingin, ventilasi, dan lainnya.</p>
-                        <p class="text-blue-700 font-bold mb-4">Rp 149.000</p>
-                        <button onclick="viewDetail('HVAC Calculators')" class="w-full border border-blue-600 text-blue-600 py-2 rounded-lg text-xs font-bold hover:bg-blue-50 transition-colors">
-                            Lihat Detail
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="bg-white rounded-xl overflow-hidden border border-gray-100 card-shadow hover:translate-y-[-4px] transition-transform duration-300">
-                    <div class="relative h-40 bg-gray-200">
-                        <img src="https://images.unsplash.com/photo-1542013936693-884638332954?auto=format&fit=crop&w=400&q=80" alt="Pipe Sizing" class="w-full h-full object-cover">
-                        <div class="absolute top-3 left-3 bg-white p-1.5 rounded shadow-sm">
-                            <i class="fas fa-faucet text-green-500"></i>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h4 class="font-bold text-gray-800 mb-1">Pipe Sizing Tools</h4>
-                        <p class="text-[10px] text-gray-500 mb-3 h-12 overflow-hidden">Alat bantu perhitungan ukuran pipa untuk sistem plumbing dan hydrant.</p>
-                        <p class="text-blue-700 font-bold mb-4">Rp 129.000</p>
-                        <button onclick="viewDetail('Pipe Sizing Tools')" class="w-full border border-blue-600 text-blue-600 py-2 rounded-lg text-xs font-bold hover:bg-blue-50 transition-colors">
-                            Lihat Detail
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="bg-white rounded-xl overflow-hidden border border-gray-100 card-shadow hover:translate-y-[-4px] transition-transform duration-300">
-                    <div class="relative h-40 bg-gray-200">
-                        <img src="https://images.unsplash.com/photo-1498084393753-b411b2d26b34?auto=format&fit=crop&w=400&q=80" alt="Electrical" class="w-full h-full object-cover">
-                        <div class="absolute top-3 left-3 bg-white p-1.5 rounded shadow-sm">
-                            <i class="fas fa-bolt text-yellow-500"></i>
-                        </div>
-                    </div>
-                    <div class="p-4">
-                        <h4 class="font-bold text-gray-800 mb-1">Electrical Tools</h4>
-                        <p class="text-[10px] text-gray-500 mb-3 h-12 overflow-hidden">Kalkulator dan tools kelistrikan untuk desain dan analisis sistem.</p>
-                        <p class="text-blue-700 font-bold mb-4">Rp 99.000</p>
-                        <button onclick="viewDetail('Electrical Tools')" class="w-full border border-blue-600 text-blue-600 py-2 rounded-lg text-xs font-bold hover:bg-blue-50 transition-colors">
-                            Lihat Detail
-                        </button>
+            <div style="margin-top:2rem; text-align:center;">
+                <div style="font-size:1.1rem; font-weight:600; color:var(--primary); margin-bottom:0.5rem;">TAMPAK ATAS / DENAH LANTAI</div>
+                <div style="background:#f0f9ff; border:2px dashed #cbd5e1; border-radius:12px; padding:2rem; max-width:600px; margin:0 auto; text-align:center;">
+                    <div style="font-size:2.5rem; color:#1e3a8a; margin-bottom:1rem;">🏠</div>
+                    <div style="font-size:1.2rem; font-weight:600;">Denah Rumah 2D</div>
+                    <div style="margin-top:1rem; color:#6b7280;">
+                        Panjang: <span id="outLength2">12.0</span> m × Lebar: <span id="outWidth2">10.0</span> m<br>
+                        Luas: <span id="outArea2">120.0</span> m²
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Kategori Produk -->
-        <section class="mb-10">
-            <h3 class="text-xl font-bold text-gray-800 mb-6">Kategori Produk</h3>
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
-                <div class="bg-white p-4 rounded-xl border border-gray-100 flex items-center space-x-3 hover:bg-blue-50 transition-colors cursor-pointer group">
-                    <div class="bg-blue-100 text-blue-600 p-3 rounded-lg group-hover:bg-blue-600 group-hover:text-white transition-all">
-                        <i class="fas fa-drafting-compass"></i>
-                    </div>
-                    <div>
-                        <p class="text-xs font-bold text-gray-800">MEP Design</p>
-                        <p class="text-[10px] text-gray-500">120+ Produk</p>
-                    </div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gray-100 flex items-center space-x-3 hover:bg-blue-50 transition-colors cursor-pointer group">
-                    <div class="bg-cyan-100 text-cyan-600 p-3 rounded-lg group-hover:bg-cyan-600 group-hover:text-white transition-all">
-                        <i class="fas fa-wind"></i>
-                    </div>
-                    <div>
-                        <p class="text-xs font-bold text-gray-800">HVAC Tools</p>
-                        <p class="text-[10px] text-gray-500">80+ Produk</p>
-                    </div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gray-100 flex items-center space-x-3 hover:bg-blue-50 transition-colors cursor-pointer group">
-                    <div class="bg-green-100 text-green-600 p-3 rounded-lg group-hover:bg-green-600 group-hover:text-white transition-all">
-                        <i class="fas fa-tint"></i>
-                    </div>
-                    <div>
-                        <p class="text-xs font-bold text-gray-800">Plumbing</p>
-                        <p class="text-[10px] text-gray-500">60+ Produk</p>
-                    </div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gray-100 flex items-center space-x-3 hover:bg-blue-50 transition-colors cursor-pointer group">
-                    <div class="bg-yellow-100 text-yellow-600 p-3 rounded-lg group-hover:bg-yellow-600 group-hover:text-white transition-all">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <div>
-                        <p class="text-xs font-bold text-gray-800">Electrical</p>
-                        <p class="text-[10px] text-gray-500">70+ Produk</p>
-                    </div>
-                </div>
-                <div class="bg-white p-4 rounded-xl border border-gray-100 flex items-center space-x-3 hover:bg-blue-50 transition-colors cursor-pointer group">
-                    <div class="bg-purple-100 text-purple-600 p-3 rounded-lg group-hover:bg-purple-600 group-hover:text-white transition-all">
-                        <i class="fas fa-th-large"></i>
-                    </div>
-                    <div>
-                        <p class="text-xs font-bold text-gray-800">Lainnya</p>
-                        <p class="text-[10px] text-gray-500">50+ Produk</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row items-center justify-between text-gray-500 text-xs">
-            <p>&copy; 2025 Prodak Digital Mouza Engineer. Semua hak dilindungi.</p>
-            <div class="flex space-x-6 mt-4 md:mt-0">
-                <a href="#" class="hover:text-blue-600 transition-colors"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="hover:text-pink-600 transition-colors"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="hover:text-red-600 transition-colors"><i class="fab fa-youtube"></i></a>
-                <a href="#" class="hover:text-blue-400 transition-colors"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-        </footer>
-    </main>
-
-    <!-- Sidebar Right -->
-    <aside class="w-full md:w-80 bg-white border-l border-gray-200 p-6 hidden lg:block overflow-y-auto h-screen sticky top-0">
-        <div class="mb-10">
-            <h5 class="text-sm font-bold text-gray-400 mb-6 uppercase tracking-wider">Logo Usaha</h5>
-            <div class="flex justify-center">
-                <div class="relative w-48 h-48 rounded-full border-8 border-gray-100 flex items-center justify-center p-4">
-                    <div class="w-full h-full rounded-full bg-blue-900 flex flex-col items-center justify-center text-white text-center p-4 relative overflow-hidden">
-                        <!-- Simulated Logo -->
-                        <div class="absolute inset-0 opacity-10 flex items-center justify-center">
-                            <i class="fas fa-cog text-[150px] animate-spin-slow"></i>
-                        </div>
-                        <p class="text-[10px] font-bold mb-1">MOUZA ENGINEER</p>
-                        <div class="w-12 h-0.5 bg-white mb-2"></div>
-                        <i class="fas fa-star text-2xl mb-2"></i>
-                        <p class="text-[10px] font-bold">POWER INNOVATION</p>
-                        <div class="absolute bottom-2 text-[8px] opacity-80">PRODAK DIGITAL</div>
-                    </div>
-                </div>
+            <div class="btn-group" style="margin-top:2rem;">
+                <button class="btn btn-success" onclick="exportPDF()">
+                    <i class="fas fa-file-pdf"></i> EXPORT PDF LAPORAN
+                </button>
+                <button class="btn btn-outline" onclick="exportExcel()">
+                    <i class="fas fa-file-excel"></i> EXPORT EXCEL DATA
+                </button>
             </div>
         </div>
 
-        <div>
-            <h5 class="text-sm font-bold text-gray-400 mb-6 uppercase tracking-wider">Testimoni Pembeli</h5>
-            <div class="space-y-4">
-                <!-- Testi 1 -->
-                <div class="bg-blue-50 p-4 rounded-xl border border-blue-100">
-                    <div class="flex items-center space-x-3 mb-2">
-                        <img src="https://i.pravatar.cc/150?u=rudi" alt="Rudi" class="w-8 h-8 rounded-full">
-                        <div>
-                            <p class="text-xs font-bold text-gray-800">Rudi Hermawan</p>
-                            <div class="flex text-yellow-400 text-[8px]">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-[10px] text-gray-600 italic">"Produk sangat membantu pekerjaan saya. File lengkap dan mudah digunakan!"</p>
-                </div>
-                <!-- Testi 2 -->
-                <div class="bg-green-50 p-4 rounded-xl border border-green-100">
-                    <div class="flex items-center space-x-3 mb-2">
-                        <img src="https://i.pravatar.cc/150?u=siti" alt="Siti" class="w-8 h-8 rounded-full">
-                        <div>
-                            <p class="text-xs font-bold text-gray-800">Siti Aisyah</p>
-                            <div class="flex text-yellow-400 text-[8px]">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-[10px] text-gray-600 italic">"Kalkulator HVAC sangat akurat dan menghemat banyak waktu saya."</p>
-                </div>
-                <!-- Testi 3 -->
-                <div class="bg-purple-50 p-4 rounded-xl border border-purple-100">
-                    <div class="flex items-center space-x-3 mb-2">
-                        <img src="https://i.pravatar.cc/150?u=budi" alt="Budi" class="w-8 h-8 rounded-full">
-                        <div>
-                            <p class="text-xs font-bold text-gray-800">Budi Santoso</p>
-                            <div class="flex text-yellow-400 text-[8px]">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-[10px] text-gray-600 italic">"Koleksi tools engineering-nya lengkap dan sangat bermanfaat."</p>
-                </div>
-            </div>
-            <button class="w-full mt-6 border border-blue-600 text-blue-600 py-2 rounded-lg text-xs font-bold hover:bg-blue-50 transition-colors">
-                Lihat Semua Testimoni
-            </button>
+        <!-- Info -->
+        <div class="card">
+            <h2 class="card-title"><i class="fas fa-info-circle"></i> Catatan</h2>
+            <ul style="padding-left:1.5rem; color:#6b7280; line-height:1.7;">
+                <li>Logo akan muncul jika file <code>logo.png</code> ada di repo dan bernama tepat <strong>lowercase</strong>.</li>
+                <li>File PDF/Excel akan diunduh ke folder <strong>Downloads</strong> di Chrome — pastikan tidak diblokir pop-up.</li>
+                <li>Jika tidak muncul, coba: <strong>Ctrl+Shift+R** (hard refresh) atau gunakan Incognito.</li>
+            </ul>
         </div>
-    </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 <a href="https://tokoprodakengineeringman-hash.github.io/4manengineering/">Prodak Digital Mouza Engineer</a></p>
+        <p>Generator Denah Rumah 2D — Versi 2.0 PRO | Output Siap AutoCAD</p>
+    </footer>
 
     <script>
-        // Aktifkan interaksi tombol
-        function viewDetail(productName) {
-            alert('Membuka detail untuk: ' + productName + '\nFitur ini siap dihubungkan ke halaman produk Anda.');
+        // Generate denah
+        function generateDenah() {
+            const name = document.getElementById('projName').value || 'Proyek Baru';
+            const length = parseFloat(document.getElementById('length').value) || 12;
+            const width = parseFloat(document.getElementById('width').value) || 10;            const wallHeight = parseFloat(document.getElementById('wallHeight').value) || 3;
+            const floors = document.getElementById('floors').value;
+            const roof = document.getElementById('roofType').value;
+            const wallThick = parseFloat(document.getElementById('wallThick').value) || 0.15;
+            const foundation = document.getElementById('foundation').value;
+            const area = (length * width).toFixed(1);
+
+            document.getElementById('outLength').textContent = length.toFixed(1);
+            document.getElementById('outWidth').textContent = width.toFixed(1);
+            document.getElementById('outWallHeight').textContent = wallHeight.toFixed(1);
+            document.getElementById('outFloors').textContent = floors;
+            document.getElementById('outRoof').textContent = roof;
+            document.getElementById('outWallThick').textContent = wallThick.toFixed(2);
+            document.getElementById('outFoundation').textContent = foundation;
+            document.getElementById('outArea').textContent = area;
+            document.getElementById('outLength2').textContent = length.toFixed(1);
+            document.getElementById('outWidth2').textContent = width.toFixed(1);
+            document.getElementById('outArea2').textContent = area;
+
+            document.getElementById('preview').style.display = 'block';
+            showToast('Denah berhasil di-generate! 🏗️', 'success');
         }
 
-        function contactWhatsApp() {
-            const phoneNumber = "6281234567890"; // Ganti dengan nomor asli
-            const message = "Halo Mouza Engineer, saya tertarik dengan produk digital Anda.";
-            window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+        // Export PDF (real download)
+        function exportPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF('p', 'mm', 'a4');
+
+            // Header
+            doc.setFontSize(18);
+            doc.setTextColor(22, 56, 135);
+            doc.text('GENERATOR DENAH RUMAH 2D', 105, 20, { align: 'center' });
+            doc.setFontSize(12);
+            doc.setTextColor(100, 119, 144);
+            doc.text('Prodak Digital Mouza Engineer', 105, 25, { align: 'center' });
+
+            // Project info
+            doc.setFontSize(10);
+            doc.setTextColor(0);
+            doc.text('Nama Proyek: ' + (document.getElementById('projName').value || '—'), 20, 40);
+            doc.text('Pemilik: ' + (document.getElementById('owner').value || '—'), 20, 45);
+            doc.text('Alamat: ' + (document.getElementById('address').value || '—'), 20, 50);
+            doc.text('Kota: ' + (document.getElementById('city').value || '—'), 20, 55);
+
+            // Dimensions
+            doc.text('Dimensi Utama:', 20, 70);
+            doc.text(`Panjang: ${document.getElementById('outLength').textContent} m`, 20, 75);
+            doc.text(`Lebar: ${document.getElementById('outWidth').textContent} m`, 20, 80);
+            doc.text(`Luas: ${document.getElementById('outArea').textContent} m²`, 20, 85);
+            // Table
+            doc.autoTable({
+                startY: 100,
+                head: [['Item', 'Nilai', 'Satuan']],
+                body: [
+                    ['Panjang Rumah', document.getElementById('outLength').textContent, 'm'],
+                    ['Lebar Rumah', document.getElementById('outWidth').textContent, 'm'],
+                    ['Tinggi Dinding', document.getElementById('outWallHeight').textContent, 'm'],
+                    ['Jumlah Lantai', document.getElementById('outFloors').textContent, 'Lantai'],
+                    ['Luas Bangunan', document.getElementById('outArea').textContent, 'm²']
+                ],
+                theme: 'grid',
+                styles: { fontSize: 10 }
+            });
+
+            // Footer
+            doc.setFontSize(10);
+            doc.setTextColor(150, 160, 170);
+            doc.text('Generated by Mouza Engineer • Versi 2.0 PRO', 105, 280, { align: 'center' });
+
+            const filename = `Denah-${document.getElementById('projName').value || 'Proyek'}.pdf`;
+            doc.save(filename);
+            showToast(`PDF "${filename}" berhasil diunduh! 📄`, 'success');
         }
 
-        // Animasi sederhana saat scroll
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('aside');
-            if (window.scrollY > 50) {
-                nav.classList.add('shadow-md');
-            } else {
-                nav.classList.remove('shadow-md');
-            }
-        });
+        // Export Excel (real)
+        function exportExcel() {
+            const data = [
+                ["Item", "Nilai", "Satuan"],
+                ["Nama Proyek", document.getElementById('projName').value || "—", ""],
+                ["Panjang Rumah", document.getElementById('outLength').textContent, "m"],
+                ["Lebar Rumah", document.getElementById('outWidth').textContent, "m"],
+                ["Luas Bangunan", document.getElementById('outArea').textContent, "m²"],
+                ["Jumlah Lantai", document.getElementById('outFloors').textContent, "Lantai"]
+            ];
 
-        // Mobile Menu Toggle (Simplified)
-        document.querySelector('.md\\:hidden').addEventListener('click', () => {
-            alert('Menu mobile akan terbuka di sini. Anda bisa menambahkan drawer atau modal.');
+            const ws = XLSX.utils.aoa_to_sheet(data);
+            const wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, ws, "Denah");
+            const filename = `Denah-${document.getElementById('projName').value || 'Proyek'}.xlsx`;
+            XLSX.writeFile(wb, filename);
+            showToast(`Excel "${filename}" berhasil diunduh! 📊`, 'success');
+        }
+
+        // Reset
+        function resetForm() {
+            document.querySelectorAll('input, textarea, select').forEach(el => {
+                if (el.type === 'checkbox' || el.type === 'radio') el.checked = false;
+                else if (el.tagName === 'SELECT') el.selectedIndex = 0;
+                else el.value = '';            });
+            document.getElementById('preview').style.display = 'none';
+            showToast('Form direset!', 'success');
+        }
+
+        // Toast
+        function showToast(message, type = 'success') {
+            const toast = document.createElement('div');
+            toast.innerHTML = `
+                <div style="
+                    position: fixed; bottom: 2rem; right: 2rem;
+                    background: ${type === 'success' ? 'linear-gradient(135deg, #10b981, #059669)' : '#1f2937'};
+                    color: white;
+                    padding: 1rem 1.5rem;
+                    border-radius: 12px;
+                    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+                    display: flex;
+                    align-items: center;
+                    gap: 0.8rem;
+                    z-index: 1000;
+                    font-weight: 500;
+                ">
+                    <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+            document.body.appendChild(toast);
+            setTimeout(() => { document.body.removeChild(toast); }, 3000);
+        }
+
+        // Load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Pre-fill date
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('date').value = today;
         });
     </script>
+
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.js"></script>
 </body>
 </html>
