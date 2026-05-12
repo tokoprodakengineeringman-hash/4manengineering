@@ -1,26 +1,34 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id-ID">
 <head>
+    <!-- GOOGLE VERIFICATION -->
+    <meta name="google-site-verification" content="5XjuLCci6MgoKcxmyRk8RtOlHi3zxTu9rktbF_ChxZA" />
+    
+    <!-- META TAGS -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generator Denah Rumah 2D | Mouza Engineer</title>
-    <meta name="description" content="Generator denah rumah 2D otomatis untuk teknisi & engineer MEP Indonesia. Output siap AutoCAD, PDF, Excel. Versi 2.0 PRO.">
-    <meta name="keywords" content="generator denah rumah, denah 2D, AutoCAD, PDF export, Excel, teknik sipil, mouza engineer">
-
-    <!-- Google Verification -->
-    <meta name="google-site-verification" content="5XjuLCci6MgoKcxmyRk8RtOlHi3zxTu9rktbF_ChxZA" />
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Jual File AutoCAD MEP Civil HVAC Terlengkap di Indonesia | Prodak Digital Mouza Engineer</title>
+    <meta name="description" content="Prodak Digital Mouza Engineer: Toko online jual file AutoCAD MEP, gambar teknik sipil, template HVAC, 3D BIM terlengkap di Indonesia. Download instan via Link.ID. Format DWG, PDF, RVT. Mulai Rp 10.000. Garansi uang kembali!">
+    <meta name="keywords" content="jual file AutoCAD, file AutoCAD MEP, gambar teknik sipil, template perhitungan struktur, download file AutoCAD, desain HVAC, file Revit BIM, shop drawing, AutoCAD Indonesia, instalasi listrik">
+    <meta name="author" content="Prodak Digital Mouza Engineer">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://tokoprodakengineeringman-hash.github.io/4manengineering/">
+    
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
+    
+    <!-- Open Graph / Twitter -->
+    <meta property="og:title" content="Jual File AutoCAD MEP Civil HVAC Terlengkap | Prodak Digital Mouza Engineer">
+    <meta property="og:description" content="Toko online jual file AutoCAD MEP, gambar teknik sipil, template HVAC, 3D BIM. Download instan. Mulai Rp 10.000.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:url" content="https://tokoprodakengineeringman-hash.github.io/4manengineering/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="logo.png">
+    
+    <!-- Fonts & Libraries -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <style>
         :root {
             --primary: #1e3a8a;
@@ -29,156 +37,95 @@
             --dark: #1f2937;
             --light: #f3f4f6;
             --white: #ffffff;
-            --glass: rgba(255, 255, 255, 0.85);
-            --radius: 16px;
-            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
+            --shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --radius: 12px;
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Inter', system-ui, sans-serif;
-            background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%);
+            font-family: 'Segoe UI', system-ui, sans-serif;
             color: var(--dark);
             line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            padding-bottom: 3rem;        }
-
-        .container {
+        }        nav {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        /* Header */
-        header {
-            padding: 1.5rem 0;
-        }
-
-        .header-content {
+            padding: 1rem 2rem;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            gap: 2rem;
-            background: var(--glass);
-            backdrop-filter: blur(12px);
-            border-radius: var(--radius);
-            padding: 1.2rem 2rem;
-            box-shadow: var(--shadow);
+            align-items: center;
         }
-
-        .logo-section {
+        .logo {
             display: flex;
             align-items: center;
-            gap: 1.2rem;
+            gap: 1rem;
         }
-
         .logo-img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            overflow: hidden;
-            box-shadow: 0 6px 20px rgba(30, 58, 138, 0.2);
+            display: flex;
+            align-items: center;
         }
         .logo-img img {
-            width: 100%;
-            height: 100%;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
             object-fit: cover;
         }
-
-        .logo-text h1 {
-            font-size: 1.75rem;
-            font-weight: 700;
+        .logo-text {
+            font-size: 1.3rem;
+            font-weight: bold;
             color: var(--primary);
         }
-        .logo-text p {            font-size: 0.95rem;
-            color: #6b7280;
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
         }
-
-        /* Hero */
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+        }
         .hero {
-            text-align: center;
-            padding: 2.5rem 0;
+            margin-top: 70px;
+            padding: 4rem 2rem;
+            color: white;            text-align: center;
         }
-        .hero h1 {
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+        .hero-left {
+            flex: 1;
+            min-width: 300px;
+            text-align: left;
+        }
+        .hero-left h1 {
             font-size: 2.2rem;
-            color: var(--primary);
             margin-bottom: 1rem;
         }
-        .hero p {
+        .hero-left p {
             font-size: 1.1rem;
-            color: var(--dark);
-            max-width: 700px;
-            margin: 0 auto;
-            opacity: 0.9;
-        }
-
-        /* Card */
-        .card {
-            background: var(--glass);
-            backdrop-filter: blur(12px);
-            border-radius: var(--radius);
-            padding: 2rem;
-            box-shadow: var(--shadow);
             margin-bottom: 1.5rem;
+            opacity: 0.95;
         }
-
-        .card-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
+        .cta-buttons {
             display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            position: relative;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
         }
-        .card-title::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 56px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));            border-radius: 2px;
-        }
-
-        /* Form Grid */
-        .form-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--dark);
-        }
-
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 0.85rem;
-            border: 2px solid #e5e7eb;
-            border-radius: 12px;
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-        .form-group input:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        /* Buttons */
         .btn {
             padding: 0.9rem 1.8rem;
             border: none;
@@ -187,445 +134,324 @@
             cursor: pointer;
             display: inline-flex;
             align-items: center;
-            gap: 0.75rem;
-            transition: var(--transition);
-            font-size: 0.95rem;
+            gap: 0.5rem;
+            transition: all 0.3s;
         }
-
         .btn-primary {
-            background: linear-gradient(135deg, var(--primary), #1d4ed8);
-            color: white;            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
+            background: var(--primary);
+            color: white;
         }
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(30, 58, 138, 0.4);
-        }
-
         .btn-success {
-            background: linear-gradient(135deg, var(--accent), #059669);
-            color: white;
-            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
-        }
-        .btn-success:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-        .btn-outline:hover {
-            background: var(--primary);
+            background: var(--accent);
             color: white;
         }
-
-        .btn-group {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-top: 1.5rem;
+        .hero-right {            flex: 1;
+            min-width: 300px;
+            background: rgba(255,255,255,0.1);
+            padding: 1.8rem;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.2);
         }
-
-        /* Results Table */
-        .results-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1.5rem;
+        .hero-right h3 {
+            color: white;
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+        }
+        .hero-app-btn {
+            display: block;
             background: white;
+            color: var(--primary);
+            padding: 1.2rem;
             border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
         }
-        .results-table th,
-        .results-table td {
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 1px solid #e5e7eb;
-        }        .results-table th {
-            background: var(--primary);
+        .hero-app-btn:hover {
+            transform: translateY(-3px);
+        }
+        .hero-app-btn div {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .app-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
+            font-size: 1.6rem;
+        }
+        
+        /* Section */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-title {            text-align: center;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--dark);
             font-weight: 600;
         }
-        .results-table tr:last-child td {
-            border-bottom: none;
+        .badge i { color: var(--accent); }
+        
+        /* Cards */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
-
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        .card-img {
+            height: 180px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        .card-info {
+            padding: 1.5rem;
+        }
+        .card-info h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .card-info p {            color: #6b7280;
+            margin-bottom: 1rem;
+        }
+        .btn-buy {
+            width: 100%;
+            padding: 0.8rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
         /* Footer */
         footer {
+            background: var(--primary);
+            color: white;
             text-align: center;
-            padding: 2.5rem 0;
-            color: rgba(255, 255, 255, 0.85);
-            font-size: 0.9rem;
+            padding: 2rem;
         }
-        footer a {
-            color: rgba(255, 255, 255, 0.95);
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 5px 20px rgba(16, 185, 129, 0.4);
+            z-index: 999;
             text-decoration: none;
-            font-weight: 600;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Header -->
-        <header>
-            <div class="header-content">
-                <div class="logo-section">
-                    <div class="logo-img">
-                        <img src="logo.png" alt="Mouza Engineer — Prodak Digital">
-                    </div>
-                    <div class="logo-text">
-                        <h1>Mouza Engineer</h1>
-                        <p>Prodak Digital Engineering — Teknisi & Engineer MEP Indonesia</p>
-                    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">            <div class="logo">
+                <div class="logo-img">
+                    <img src="logo.png" alt="Prodak Digital Mouza Engineer" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
                 </div>
-                <div>
-                    <span class="badge" style="background:#e0f2fe; color:#1e3a8a; padding:0.4rem 1rem; border-radius:20px; font-weight:600;">Versi 2.0 PRO</span>
-                </div>
+                <div class="logo-text">Prodak Digital Mouza Engineer</div>
             </div>
-        </header>
-
-        <!-- Hero -->
-        <section class="hero">
-            <h1>Generator Denah Rumah 2D</h1>
-            <p>Output siap AutoCAD — PDF, Excel, DWG. Untuk teknisi & engineer MEP Indonesia.</p>
-        </section>
-
-        <!-- Form -->        <div class="card">
-            <h2 class="card-title"><i class="fas fa-file-alt"></i> Informasi Proyek</h2>
-            
-            <div class="form-grid">
-                <div class="form-group">
-                    <label>Nama Proyek</label>
-                    <input type="text" id="projName" placeholder="Contoh: Rumah Pak Budi">
-                </div>
-                <div class="form-group">
-                    <label>Pemilik</label>
-                    <input type="text" id="owner" placeholder="Nama pemilik">
-                </div>
-                <div class="form-group">
-                    <label>Alamat</label>
-                    <input type="text" id="address" placeholder="Jl. Contoh No. 123">
-                </div>
-                <div class="form-group">
-                    <label>Kota / Lokasi</label>
-                    <input type="text" id="city" placeholder="Jakarta Selatan">
-                </div>
-                <div class="form-group">
-                    <label>Tanggal Rencana</label>
-                    <input type="date" id="date">
-                </div>
-                <div class="form-group">
-                    <label>Arsitek / Perencana</label>
-                    <input type="text" id="architect" placeholder="Nama arsitek">
-                </div>
-                <div class="form-group">
-                    <label>Nomor Gambar</label>
-                    <input type="text" id="drawingNo" placeholder="DRH-001">
-                </div>
-                <div class="form-group">
-                    <label>Catatan</label>
-                    <textarea id="notes" rows="2" placeholder="Catatan tambahan..."></textarea>
-                </div>
-            </div>
-
-            <h2 class="card-title"><i class="fas fa-ruler-combined"></i> Dimensi Utama Rumah</h2>
-            <div class="form-grid">
-                <div class="form-group">
-                    <label>Panjang Rumah (m)</label>
-                    <input type="number" id="length" value="12" min="5" step="0.1">
-                </div>
-                <div class="form-group">
-                    <label>Lebar Rumah (m)</label>
-                    <input type="number" id="width" value="10" min="5" step="0.1">
-                </div>
-                <div class="form-group">
-                    <label>Tinggi Dinding (m)</label>                    <input type="number" id="wallHeight" value="3" min="2" step="0.1">
-                </div>
-                <div class="form-group">
-                    <label>Jumlah Lantai</label>
-                    <select id="floors">
-                        <option value="1">1 Lantai</option>
-                        <option value="2">2 Lantai</option>
-                        <option value="3">3 Lantai</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Jenis Atap</label>
-                    <select id="roofType">
-                        <option>Pelana (Segitiga)</option>
-                        <option>Limas (Hip Roof)</option>
-                        <option>Datar</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Tinggi Atap (m)</label>
-                    <input type="number" id="roofHeight" value="2.5" min="1" step="0.1">
-                </div>
-                <div class="form-group">
-                    <label>Ketebalan Dinding (m)</label>
-                    <input type="number" id="wallThick" value="0.15" min="0.1" step="0.01">
-                </div>
-                <div class="form-group">
-                    <label>Jenis Pondasi</label>
-                    <select id="foundation">
-                        <option>Batu Kali</option>
-                        <option>Cakar Ayam</option>
-                        <option>Tiang Pancang</option>
-                    </select>
-                </div>
-            </div>
-
-            <h2 class="card-title"><i class="fas fa-home"></i> Dimensi Ruangan</h2>
-            <div class="form-grid">
-                <div class="form-group">
-                    <label>Teras Depan (m)</label>
-                    <div style="display:flex;gap:0.5rem;">
-                        <input type="number" placeholder="Lebar" style="flex:1;">
-                        <input type="number" placeholder="Panjang" style="flex:1;">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Ruang Tamu (m)</label>
-                    <div style="display:flex;gap:0.5rem;">
-                        <input type="number" placeholder="Lebar" style="flex:1;">
-                        <input type="number" placeholder="Panjang" style="flex:1;">                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Kamar Tidur Utama (m)</label>
-                    <div style="display:flex;gap:0.5rem;">
-                        <input type="number" placeholder="Lebar" style="flex:1;">
-                        <input type="number" placeholder="Panjang" style="flex:1;">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Kamar Mandi (m)</label>
-                    <div style="display:flex;gap:0.5rem;">
-                        <input type="number" placeholder="Lebar" style="flex:1;">
-                        <input type="number" placeholder="Panjang" style="flex:1;">
-                    </div>
-                </div>
-            </div>
-
-            <div class="btn-group">
-                <button class="btn btn-primary" onclick="generateDenah()">
-                    <i class="fas fa-play-circle"></i> GENERATE DENAH
-                </button>
-                <button class="btn btn-success" onclick="exportPDF()">
-                    <i class="fas fa-file-pdf"></i> EXPORT PDF LAPORAN
-                </button>
-                <button class="btn btn-outline" onclick="resetForm()">
-                    <i class="fas fa-redo"></i> RESET
-                </button>
-            </div>
-        </div>
-
-        <!-- Preview -->
-        <div class="card" id="preview" style="display:none;">
-            <h2 class="card-title"><i class="fas fa-eye"></i> Hasil Denah Rumah</h2>
-            
-            <table class="results-table">
-                <thead>
-                    <tr>
-                        <th>Item</th>
-                        <th>Nilai</th>
-                        <th>Satuan</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>Panjang Rumah</td><td id="outLength">12.0</td><td>meter</td></tr>
-                    <tr><td>Lebar Rumah</td><td id="outWidth">10.0</td><td>meter</td></tr>
-                    <tr><td>Tinggi Dinding</td><td id="outWallHeight">3.0</td><td>meter</td></tr>
-                    <tr><td>Jumlah Lantai</td><td id="outFloors">2</td><td>Lantai</td></tr>
-                    <tr><td>Jenis Atap</td><td id="outRoof">Limas (Hip Roof)</td><td>-</td></tr>
-                    <tr><td>Ketebalan Dinding</td><td id="outWallThick">0.15</td><td>meter</td></tr>                    <tr><td>Jenis Pondasi</td><td id="outFoundation">Cakar Ayam</td><td>-</td></tr>
-                    <tr><td>Luas Bangunan</td><td id="outArea">120.0</td><td>m²</td></tr>
-                </tbody>
-            </table>
-
-            <div style="margin-top:2rem; text-align:center;">
-                <div style="font-size:1.1rem; font-weight:600; color:var(--primary); margin-bottom:0.5rem;">TAMPAK ATAS / DENAH LANTAI</div>
-                <div style="background:#f0f9ff; border:2px dashed #cbd5e1; border-radius:12px; padding:2rem; max-width:600px; margin:0 auto; text-align:center;">
-                    <div style="font-size:2.5rem; color:#1e3a8a; margin-bottom:1rem;">🏠</div>
-                    <div style="font-size:1.2rem; font-weight:600;">Denah Rumah 2D</div>
-                    <div style="margin-top:1rem; color:#6b7280;">
-                        Panjang: <span id="outLength2">12.0</span> m × Lebar: <span id="outWidth2">10.0</span> m<br>
-                        Luas: <span id="outArea2">120.0</span> m²
-                    </div>
-                </div>
-            </div>
-
-            <div class="btn-group" style="margin-top:2rem;">
-                <button class="btn btn-success" onclick="exportPDF()">
-                    <i class="fas fa-file-pdf"></i> EXPORT PDF LAPORAN
-                </button>
-                <button class="btn btn-outline" onclick="exportExcel()">
-                    <i class="fas fa-file-excel"></i> EXPORT EXCEL DATA
-                </button>
-            </div>
-        </div>
-
-        <!-- Info -->
-        <div class="card">
-            <h2 class="card-title"><i class="fas fa-info-circle"></i> Catatan</h2>
-            <ul style="padding-left:1.5rem; color:#6b7280; line-height:1.7;">
-                <li>Logo akan muncul jika file <code>logo.png</code> ada di repo dan bernama tepat <strong>lowercase</strong>.</li>
-                <li>File PDF/Excel akan diunduh ke folder <strong>Downloads</strong> di Chrome — pastikan tidak diblokir pop-up.</li>
-                <li>Jika tidak muncul, coba: <strong>Ctrl+Shift+R** (hard refresh) atau gunakan Incognito.</li>
+            <ul class="nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#produk">Produk</a></li>
+                <li><a href="#cara-beli">Cara Beli</a></li>
+                <li><a href="artikel-mep-sipil.html">Artikel</a></li>
+                <li><a href="https://tokoprodakengineeringman-hash.github.io/genratordenahrumah/" target="_blank">Denah Rumah</a></li>
             </ul>
         </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <!-- Kolom Kiri -->
+            <div class="hero-left">
+                <h1>Jual File AutoCAD MEP Civil HVAC Terlengkap di Indonesia</h1>
+                <p>Solusi Produk Digital Engineering untuk MEP, Civil, HVAC & 3D BIM. File siap download instan via Link.ID.</p>
+                
+                <div class="cta-buttons">
+                    <a href="https://lynk.id/amanar" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-shopping-cart"></i> Belanja Sekarang
+                    </a>
+                    <a href="#cara-beli" class="btn btn-success">
+                        <i class="fas fa-info-circle"></i> Cara Pembelian
+                    </a>
+                </div>
+                
+                <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <span class="badge"><i class="fas fa-check-circle"></i> Pembayaran Otomatis</span>
+                    <span class="badge"><i class="fas fa-bolt"></i> File Dikirim Instan</span>
+                </div>
+            </div>
+
+            <!-- Kolom Kanan: Aplikasi Demo -->
+            <div class="hero-right">
+                <span style="background: #f59e0b; color: #1f2937; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">🔥 GRATIS</span>
+                <h3>Generator Denah Rumah 2D</h3>
+                <p style="color: rgba(255,255,255,0.9); margin-bottom: 1rem;">
+                    Buat layout rumah sederhana dalam hitungan detik!
+                </p>
+                
+                <a href="https://tokoprodakengineeringman-hash.github.io/genratordenahrumah/" class="hero-app-btn" target="_blank">
+                    <div>
+                        <div class="app-icon">                            <i class="fas fa-drafting-compass"></i>
+                        </div>
+                        <div>
+                            <strong>Coba Aplikasi Demo</strong>
+                            <div style="font-size: 0.85rem; opacity: 0.8;">Klik untuk buka generator denah</div>
+                        </div>
+                        <i class="fas fa-arrow-right" style="color: var(--accent);"></i>
+                    </div>
+                </a>
+                
+                <p style="margin-top: 1rem; font-size: 0.8rem; opacity: 0.8;">
+                    *Hasil denah bisa jadi referensi awal sebelum beli file DWG lengkap.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges -->
+    <div class="trust-badges">
+        <div class="badge"><i class="fas fa-check-circle"></i> File Original & Berkualitas</div>
+        <div class="badge"><i class="fas fa-sync-alt"></i> Lengkap & Terupdate</div>
+        <div class="badge"><i class="fas fa-tag"></i> Harga Terjangkau</div>
+        <div class="badge"><i class="fas fa-cloud-download-alt"></i> Download Instan</div>
     </div>
+
+    <!-- Produk Section -->
+    <section class="section" id="produk">
+        <h2 class="section-title">Kategori Produk Digital Engineering</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="card-img"><i class="fas fa-cogs"></i></div>
+                <div class="card-info">
+                    <h3>File AutoCAD MEP</h3>
+                    <p>Gambar instalasi listrik, pipa, HVAC, plumbing. Format DWG & PDF.</p>
+                    <a href="https://lynk.id/amanar" class="btn-buy" target="_blank">
+                        <i class="fas fa-arrow-right"></i> Lihat Produk
+                    </a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img"><i class="fas fa-building"></i></div>
+                <div class="card-info">
+                    <h3>Gambar Teknik Sipil</h3>
+                    <p>Denah, potongan kolom, balok, pondasi, detail struktur bangunan.</p>
+                    <a href="https://lynk.id/amanar" class="btn-buy" target="_blank">
+                        <i class="fas fa-arrow-right"></i> Lihat Produk
+                    </a>
+                </div>
+            </div>
+            <div class="card">                <div class="card-img"><i class="fas fa-wind"></i></div>
+                <div class="card-info">
+                    <h3>Template HVAC & Perhitungan</h3>
+                    <p>Layout ducting, perhitungan cooling load, spesifikasi equipment.</p>
+                    <a href="https://lynk.id/amanar" class="btn-buy" target="_blank">
+                        <i class="fas fa-arrow-right"></i> Lihat Produk
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cara Beli -->
+    <section class="section" id="cara-beli">
+        <h2 class="section-title">Cara Pembelian</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <ol style="padding-left: 1.5rem; line-height: 2;">
+                <li><strong>Pilih Kategori</strong> → Cari produk yang dibutuhkan</li>
+                <li><strong>Klik "Lihat Produk"</strong> → Akan diarahkan ke Link.ID</li>
+                <li><strong>Bayar via Link.ID</strong> → OVO, GoPay, Dana, Transfer</li>
+                <li><strong>File Otomatis Terkirim</strong> → Ke email & WhatsApp Anda</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Artikel Section -->
+    <section class="section" id="artikel">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <h2 class="section-title">📚 Artikel & Panduan Teknik</h2>
+            <p style="font-size: 1.1rem; color: #4b5563; margin-bottom: 2rem;">
+                Pelajari cara menggunakan file AutoCAD, tips desain, dan standar teknik Indonesia.
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+                <a href="artikel-mep-sipil.html" class="card" style="background: white; border-radius: 12px; padding: 1.5rem; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.08); transition: transform 0.3s;">
+                    <div style="font-size: 2.5rem; color: #1e3a8a; margin-bottom: 1rem; text-align: center;">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3 style="color: #1e3a8a; margin-bottom: 0.5rem;">Panduan File AutoCAD MEP & Sipil</h3>
+                    <p style="color: #6b7280; font-size: 0.95rem;">Cara pakai file AutoCAD, template perhitungan, dan standar gambar teknik.</p>
+                </a>
+                
+                <a href="https://tokoprodakengineeringman-hash.github.io/genratordenahrumah/" target="_blank" class="card" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 12px; padding: 1.5rem; text-decoration: none; color: white; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem; text-align: center;">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3 style="margin-bottom: 0.5rem;">Generator Denah Rumah Gratis</h3>
+                    <p style="opacity: 0.9; font-size: 0.95rem;">Buat layout rumah sederhana dalam 1 menit. Tanpa instalasi!</p>
+                </a>
+            </div>        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 <a href="https://tokoprodakengineeringman-hash.github.io/4manengineering/">Prodak Digital Mouza Engineer</a></p>
-        <p>Generator Denah Rumah 2D — Versi 2.0 PRO | Output Siap AutoCAD</p>
+        <p>&copy; 2024 Prodak Digital Mouza Engineer</p>
+        <p>Jual File AutoCAD MEP Civil HVAC | Download Instan via Link.ID</p>
     </footer>
 
-    <script>
-        // Generate denah
-        function generateDenah() {
-            const name = document.getElementById('projName').value || 'Proyek Baru';
-            const length = parseFloat(document.getElementById('length').value) || 12;
-            const width = parseFloat(document.getElementById('width').value) || 10;            const wallHeight = parseFloat(document.getElementById('wallHeight').value) || 3;
-            const floors = document.getElementById('floors').value;
-            const roof = document.getElementById('roofType').value;
-            const wallThick = parseFloat(document.getElementById('wallThick').value) || 0.15;
-            const foundation = document.getElementById('foundation').value;
-            const area = (length * width).toFixed(1);
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/6289676580478?text=Halo%20Prodak%20Digital%20Mouza%20Engineer,%20saya%20butuh%20bantuan." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-            document.getElementById('outLength').textContent = length.toFixed(1);
-            document.getElementById('outWidth').textContent = width.toFixed(1);
-            document.getElementById('outWallHeight').textContent = wallHeight.toFixed(1);
-            document.getElementById('outFloors').textContent = floors;
-            document.getElementById('outRoof').textContent = roof;
-            document.getElementById('outWallThick').textContent = wallThick.toFixed(2);
-            document.getElementById('outFoundation').textContent = foundation;
-            document.getElementById('outArea').textContent = area;
-            document.getElementById('outLength2').textContent = length.toFixed(1);
-            document.getElementById('outWidth2').textContent = width.toFixed(1);
-            document.getElementById('outArea2').textContent = area;
-
-            document.getElementById('preview').style.display = 'block';
-            showToast('Denah berhasil di-generate! 🏗️', 'success');
-        }
-
-        // Export PDF (real download)
-        function exportPDF() {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF('p', 'mm', 'a4');
-
-            // Header
-            doc.setFontSize(18);
-            doc.setTextColor(22, 56, 135);
-            doc.text('GENERATOR DENAH RUMAH 2D', 105, 20, { align: 'center' });
-            doc.setFontSize(12);
-            doc.setTextColor(100, 119, 144);
-            doc.text('Prodak Digital Mouza Engineer', 105, 25, { align: 'center' });
-
-            // Project info
-            doc.setFontSize(10);
-            doc.setTextColor(0);
-            doc.text('Nama Proyek: ' + (document.getElementById('projName').value || '—'), 20, 40);
-            doc.text('Pemilik: ' + (document.getElementById('owner').value || '—'), 20, 45);
-            doc.text('Alamat: ' + (document.getElementById('address').value || '—'), 20, 50);
-            doc.text('Kota: ' + (document.getElementById('city').value || '—'), 20, 55);
-
-            // Dimensions
-            doc.text('Dimensi Utama:', 20, 70);
-            doc.text(`Panjang: ${document.getElementById('outLength').textContent} m`, 20, 75);
-            doc.text(`Lebar: ${document.getElementById('outWidth').textContent} m`, 20, 80);
-            doc.text(`Luas: ${document.getElementById('outArea').textContent} m²`, 20, 85);
-            // Table
-            doc.autoTable({
-                startY: 100,
-                head: [['Item', 'Nilai', 'Satuan']],
-                body: [
-                    ['Panjang Rumah', document.getElementById('outLength').textContent, 'm'],
-                    ['Lebar Rumah', document.getElementById('outWidth').textContent, 'm'],
-                    ['Tinggi Dinding', document.getElementById('outWallHeight').textContent, 'm'],
-                    ['Jumlah Lantai', document.getElementById('outFloors').textContent, 'Lantai'],
-                    ['Luas Bangunan', document.getElementById('outArea').textContent, 'm²']
-                ],
-                theme: 'grid',
-                styles: { fontSize: 10 }
-            });
-
-            // Footer
-            doc.setFontSize(10);
-            doc.setTextColor(150, 160, 170);
-            doc.text('Generated by Mouza Engineer • Versi 2.0 PRO', 105, 280, { align: 'center' });
-
-            const filename = `Denah-${document.getElementById('projName').value || 'Proyek'}.pdf`;
-            doc.save(filename);
-            showToast(`PDF "${filename}" berhasil diunduh! 📄`, 'success');
-        }
-
-        // Export Excel (real)
-        function exportExcel() {
-            const data = [
-                ["Item", "Nilai", "Satuan"],
-                ["Nama Proyek", document.getElementById('projName').value || "—", ""],
-                ["Panjang Rumah", document.getElementById('outLength').textContent, "m"],
-                ["Lebar Rumah", document.getElementById('outWidth').textContent, "m"],
-                ["Luas Bangunan", document.getElementById('outArea').textContent, "m²"],
-                ["Jumlah Lantai", document.getElementById('outFloors').textContent, "Lantai"]
-            ];
-
-            const ws = XLSX.utils.aoa_to_sheet(data);
-            const wb = XLSX.utils.book_new();
-            XLSX.utils.book_append_sheet(wb, ws, "Denah");
-            const filename = `Denah-${document.getElementById('projName').value || 'Proyek'}.xlsx`;
-            XLSX.writeFile(wb, filename);
-            showToast(`Excel "${filename}" berhasil diunduh! 📊`, 'success');
-        }
-
-        // Reset
-        function resetForm() {
-            document.querySelectorAll('input, textarea, select').forEach(el => {
-                if (el.type === 'checkbox' || el.type === 'radio') el.checked = false;
-                else if (el.tagName === 'SELECT') el.selectedIndex = 0;
-                else el.value = '';            });
-            document.getElementById('preview').style.display = 'none';
-            showToast('Form direset!', 'success');
-        }
-
-        // Toast
-        function showToast(message, type = 'success') {
-            const toast = document.createElement('div');
-            toast.innerHTML = `
-                <div style="
-                    position: fixed; bottom: 2rem; right: 2rem;
-                    background: ${type === 'success' ? 'linear-gradient(135deg, #10b981, #059669)' : '#1f2937'};
-                    color: white;
-                    padding: 1rem 1.5rem;
-                    border-radius: 12px;
-                    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-                    display: flex;
-                    align-items: center;
-                    gap: 0.8rem;
-                    z-index: 1000;
-                    font-weight: 500;
-                ">
-                    <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
-                    <span>${message}</span>
-                </div>
-            `;
-            document.body.appendChild(toast);
-            setTimeout(() => { document.body.removeChild(toast); }, 3000);
-        }
-
-        // Load
-        document.addEventListener('DOMContentLoaded', () => {
-            // Pre-fill date
-            const today = new Date().toISOString().split('T')[0];
-            document.getElementById('date').value = today;
-        });
-    </script>
-
-    <!-- Libraries -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.js"></script>
 </body>
 </html>
