@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
-    <title>Jual File AutoCAD MEP Civil HVAC Terlengkap di Indonesia | Prodak Digital Mouza Engineer</title>
+    <title>Jual File AutoCAD MEP Civil HVAC Terlengkap | Prodak Digital Mouza Engineer</title>
     <meta name="description" content="Prodak Digital Mouza Engineer: Toko online jual file AutoCAD MEP, gambar teknik sipil, template HVAC, 3D BIM terlengkap di Indonesia. Download instan via Link.ID. Format DWG, PDF, RVT. Mulai Rp 10.000. Garansi uang kembali!">
     <meta name="keywords" content="jual file AutoCAD, file AutoCAD MEP, gambar teknik sipil, template perhitungan struktur, download file AutoCAD, desain HVAC, file Revit BIM, shop drawing, AutoCAD Indonesia, instalasi listrik">
     <meta name="author" content="Prodak Digital Mouza Engineer">
@@ -37,6 +37,7 @@
             --dark: #1f2937;
             --light: #f3f4f6;
             --white: #ffffff;
+            --gray-light: #e5e7eb;
             --shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
             --radius: 12px;
         }
@@ -45,11 +46,11 @@
             font-family: 'Segoe UI', system-ui, sans-serif;
             color: var(--dark);
             line-height: 1.6;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }        nav {
             background: var(--white);
-            box-shadow: var(--shadow);
+            min-height: 100vh;        }
+        nav {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             position: fixed;
             width: 100%;
             top: 0;
@@ -95,8 +96,9 @@
         }
         .hero {
             margin-top: 70px;
-            padding: 4rem 2rem;
-            color: white;            text-align: center;
+            padding: 5rem 2rem;            color: var(--dark);
+            text-align: center;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
         }
         .hero-content {
             max-width: 1200px;
@@ -114,11 +116,12 @@
         .hero-left h1 {
             font-size: 2.2rem;
             margin-bottom: 1rem;
+            color: var(--dark);
         }
         .hero-left p {
             font-size: 1.1rem;
             margin-bottom: 1.5rem;
-            opacity: 0.95;
+            color: #4b5563;
         }
         .cta-buttons {
             display: flex;
@@ -139,33 +142,37 @@
         }
         .btn-primary {
             background: var(--primary);
-            color: white;
+            color: var(--white);
         }
         .btn-success {
-            background: var(--accent);
-            color: white;
+            background: var(--accent);            color: var(--white);
         }
-        .hero-right {            flex: 1;
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        .hero-right {
+            flex: 1;
             min-width: 300px;
-            background: rgba(255,255,255,0.1);
+            background: var(--white);
             padding: 1.8rem;
             border-radius: 15px;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
         }
         .hero-right h3 {
-            color: white;
+            color: var(--dark);
             margin-bottom: 0.8rem;
             font-size: 1.4rem;
         }
         .hero-app-btn {
             display: block;
-            background: white;
-            color: var(--primary);
+            background: var(--primary);
+            color: var(--white);
             padding: 1.2rem;
             border-radius: 12px;
             text-decoration: none;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 25px rgba(30, 58, 138, 0.2);
             transition: transform 0.3s;
         }
         .hero-app-btn:hover {
@@ -179,24 +186,24 @@
         .app-icon {
             width: 56px;
             height: 56px;
-            background: var(--accent);
+            background: var(--white);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--primary);
             font-size: 1.6rem;
         }
-        
-        /* Section */
+                /* Section */
         .section {
             padding: 5rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
-        .section-title {            text-align: center;
+        .section-title {
+            text-align: center;
             font-size: 2rem;
-            color: var(--primary);
+            color: var(--dark);
             margin-bottom: 2rem;
         }
         .trust-badges {
@@ -222,10 +229,11 @@
             gap: 2rem;
         }
         .card {
-            background: white;
+            background: var(--white);
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: var(--shadow);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border: 1px solid var(--gray-light);
         }
         .card-img {
             height: 180px;
@@ -233,24 +241,24 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--white);
             font-size: 3rem;
-        }
-        .card-info {
+        }        .card-info {
             padding: 1.5rem;
         }
         .card-info h3 {
             color: var(--primary);
             margin-bottom: 0.5rem;
         }
-        .card-info p {            color: #6b7280;
+        .card-info p {
+            color: #6b7280;
             margin-bottom: 1rem;
         }
         .btn-buy {
             width: 100%;
             padding: 0.8rem;
             background: var(--primary);
-            color: white;
+            color: var(--white);
             border: none;
             border-radius: 8px;
             font-weight: 600;
@@ -264,8 +272,8 @@
         
         /* Footer */
         footer {
-            background: var(--primary);
-            color: white;
+            background: var(--dark);
+            color: var(--white);
             text-align: center;
             padding: 2rem;
         }
@@ -276,7 +284,7 @@
             width: 60px;
             height: 60px;
             background: var(--accent);
-            color: white;
+            color: var(--white);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -284,15 +292,15 @@
             font-size: 2rem;
             box-shadow: 0 5px 20px rgba(16, 185, 129, 0.4);
             z-index: 999;
-            text-decoration: none;
-        }
+            text-decoration: none;        }
     </style>
 </head>
 <body>
 
     <!-- Navigation -->
     <nav>
-        <div class="nav-container">            <div class="logo">
+        <div class="nav-container">
+            <div class="logo">
                 <div class="logo-img">
                     <img src="logo.png" alt="Prodak Digital Mouza Engineer" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
                 </div>
@@ -320,7 +328,7 @@
                     <a href="https://lynk.id/amanar" class="btn btn-primary" target="_blank">
                         <i class="fas fa-shopping-cart"></i> Belanja Sekarang
                     </a>
-                    <a href="#cara-beli" class="btn btn-success">
+                    <a href="#cara-beli" class="btn btn-outline">
                         <i class="fas fa-info-circle"></i> Cara Pembelian
                     </a>
                 </div>
@@ -333,25 +341,25 @@
 
             <!-- Kolom Kanan: Aplikasi Demo -->
             <div class="hero-right">
-                <span style="background: #f59e0b; color: #1f2937; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">🔥 GRATIS</span>
-                <h3>Generator Denah Rumah 2D</h3>
-                <p style="color: rgba(255,255,255,0.9); margin-bottom: 1rem;">
+                <span style="background: #fbbf24; color: #1f2937; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">🔥 GRATIS</span>                <h3>Generator Denah Rumah 2D</h3>
+                <p style="color: #6b7280; margin-bottom: 1rem;">
                     Buat layout rumah sederhana dalam hitungan detik!
                 </p>
                 
                 <a href="https://tokoprodakengineeringman-hash.github.io/genratordenahrumah/" class="hero-app-btn" target="_blank">
                     <div>
-                        <div class="app-icon">                            <i class="fas fa-drafting-compass"></i>
+                        <div class="app-icon">
+                            <i class="fas fa-drafting-compass"></i>
                         </div>
                         <div>
                             <strong>Coba Aplikasi Demo</strong>
                             <div style="font-size: 0.85rem; opacity: 0.8;">Klik untuk buka generator denah</div>
                         </div>
-                        <i class="fas fa-arrow-right" style="color: var(--accent);"></i>
+                        <i class="fas fa-arrow-right" style="color: white;"></i>
                     </div>
                 </a>
                 
-                <p style="margin-top: 1rem; font-size: 0.8rem; opacity: 0.8;">
+                <p style="margin-top: 1rem; font-size: 0.8rem; color: #9ca3af;">
                     *Hasil denah bisa jadi referensi awal sebelum beli file DWG lengkap.
                 </p>
             </div>
@@ -382,15 +390,15 @@
             </div>
             <div class="card">
                 <div class="card-img"><i class="fas fa-building"></i></div>
-                <div class="card-info">
-                    <h3>Gambar Teknik Sipil</h3>
+                <div class="card-info">                    <h3>Gambar Teknik Sipil</h3>
                     <p>Denah, potongan kolom, balok, pondasi, detail struktur bangunan.</p>
                     <a href="https://lynk.id/amanar" class="btn-buy" target="_blank">
                         <i class="fas fa-arrow-right"></i> Lihat Produk
                     </a>
                 </div>
             </div>
-            <div class="card">                <div class="card-img"><i class="fas fa-wind"></i></div>
+            <div class="card">
+                <div class="card-img"><i class="fas fa-wind"></i></div>
                 <div class="card-info">
                     <h3>Template HVAC & Perhitungan</h3>
                     <p>Layout ducting, perhitungan cooling load, spesifikasi equipment.</p>
@@ -406,7 +414,7 @@
     <section class="section" id="cara-beli">
         <h2 class="section-title">Cara Pembelian</h2>
         <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-            <ol style="padding-left: 1.5rem; line-height: 2;">
+            <ol style="padding-left: 1.5rem; line-height: 2; color: #4b5563;">
                 <li><strong>Pilih Kategori</strong> → Cari produk yang dibutuhkan</li>
                 <li><strong>Klik "Lihat Produk"</strong> → Akan diarahkan ke Link.ID</li>
                 <li><strong>Bayar via Link.ID</strong> → OVO, GoPay, Dana, Transfer</li>
@@ -424,22 +432,22 @@
             </p>
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
-                <a href="artikel-mep-sipil.html" class="card" style="background: white; border-radius: 12px; padding: 1.5rem; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.08); transition: transform 0.3s;">
-                    <div style="font-size: 2.5rem; color: #1e3a8a; margin-bottom: 1rem; text-align: center;">
+                <a href="artikel-mep-sipil.html" class="card" style="background: var(--white); border-radius: 12px; padding: 1.5rem; text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.08); transition: transform 0.3s; color: inherit;">
+                    <div style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem; text-align: center;">
                         <i class="fas fa-file-alt"></i>
                     </div>
-                    <h3 style="color: #1e3a8a; margin-bottom: 0.5rem;">Panduan File AutoCAD MEP & Sipil</h3>
+                    <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Panduan File AutoCAD MEP & Sipil</h3>
                     <p style="color: #6b7280; font-size: 0.95rem;">Cara pakai file AutoCAD, template perhitungan, dan standar gambar teknik.</p>
                 </a>
-                
-                <a href="https://tokoprodakengineeringman-hash.github.io/genratordenahrumah/" target="_blank" class="card" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 12px; padding: 1.5rem; text-decoration: none; color: white; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                                <a href="https://tokoprodakengineeringman-hash.github.io/genratordenahrumah/" target="_blank" class="card" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 12px; padding: 1.5rem; text-decoration: none; color: white; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
                     <div style="font-size: 2.5rem; margin-bottom: 1rem; text-align: center;">
                         <i class="fas fa-drafting-compass"></i>
                     </div>
                     <h3 style="margin-bottom: 0.5rem;">Generator Denah Rumah Gratis</h3>
                     <p style="opacity: 0.9; font-size: 0.95rem;">Buat layout rumah sederhana dalam 1 menit. Tanpa instalasi!</p>
                 </a>
-            </div>        </div>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
